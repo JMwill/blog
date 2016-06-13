@@ -1,0 +1,97 @@
+title: Nodejs学习笔记
+date: 2015-11-19 22:11:24
+tags:
+    - NodeJs
+    - 笔记
+---
+
+俗话说得好：有需求就有功力，这阵子可能需要进行一下NodeJs的开发，所以希望能够用两天的时间来进行一下基础的学习。虽然NodeJs的基础语法就是ECMAScript的那套，然而，谁都知道现在ECMAScript进步的速度超快，ES6出来不久，听说又准备出ES7了。不过，今天这里先不进行有关NodeJs中有关ES6的部分，先来进行一些简单的学习。入门了再来挑战新东西。
+
+## 模块与包
+
+## 模块
+
+NodeJs中创建模块的方法很简单，因为一个文件就是一个模块，在文件中写入创建模块的格式就好：
+
+```
+//some code
+
+exports.doSomething = function() {
+    // do something
+}
+exports.doAnotherThing = function() {
+    // do another thing
+}
+```
+
+在NodeJs中，一个文件内使用exports来进行模块接口的公开，这些模块接口可以被require获取：
+
+```
+var myModule = require('./myCreateModule');
+
+myModule.doSomething();
+myModule.doAnotherThing();
+```
+
+上述就是模块的创建与使用的简单介绍。这里值得注意的是“require”不会重复加载模块，无论调用多少次require获得的模块都是同一个：
+
+```
+var moduleOne = require('./myCreateModule');
+moduleOne.name = 'test for one';
+
+var moduleTwo = require('./myCreateModule');
+moduleTwo.name = 'test for two';
+
+console.log(moduleOne.name);
+```
+
+当仅想将一个对象封装到模块中时，直接使用`exports.YouObj = YouObj；`，这种方式的话在require引入时就需要在后面添加这个对象：`require('./moduleName').YouObj;`，这种方式稍显麻烦，可以通过使用module来简化引用`module.exports = YouObj;`，这样的方式可以将对象直接引出，使用时可以这样：
+
+```
+var myObj = require('./moduleName');
+
+var obj = new myObj();
+...
+```
+
+由于exports本身是一个普通的空对象，所以可以使用你需要的对象进行覆盖。
+
+## 包
+
+NodeJs中的包是在模块的基础上进一步抽象，其中一个包内会有一个JSON文件：`package.json`，这个文件用于包的说明，另外还有一些规范，但是`package.json`文件是必须的。另外，NodeJs在调用某个包时，第一时间会检查包中`package.json`文件的main字段，将其作为包的接口模块，如果找不到main字段，就会尝试寻找`index.js`或者`index.node`，想要包能够符合规范，可以通过包管理器npm运行`npm init`来进行交互式问答用以产生一个符合标准的`package.json`。
+
+## 全局链接
+
+NodeJs中的包使用npm来进行安装，安装分为全局模式以及本地模式，使用`npm install`时采用的是本地模式。本地模式会安装包到当前目录的node_module子目录下。可是，使用本地模式安装不会注册PATH环境变量，无法再命令行下使用。这样，就需要手动添加PATH，显然这不是一个好的办法。这时就需要使用全局安装`npm install -g package_name`，添加了一个**-g**参数，这样包便可以在命令行下使用了。但是这时的包无法被require引用。所以当需要把包作为工程运行时的一部分时，通过本地模式获取，需要在命令行下运行时则通过全局模式安装。
+
+由于总有些特殊的需求会出现在开发中，如果需要在本地使用一个全局安装的包，可以通过使用npm的link来进行链接`npm link global_package`，或者需要在全局情况下使用本地包，这时可以在包目录（package.json所在目录）下运行`npm link package_name`
+
+还有一些关于npm的使用，在这里就不在赘述，可以通过文档来进行学习。
+
+## 调试
+
+日常开发中，不得不面对的就是调试工作，NodeJs中提供了一系列命令行下的调试方式，通过使用命令：`nodejs debug script.js`开启NodeJs内置调试工具。一些操作命令有：
+
+```
+run                                     执行脚本，在第一行暂停
+restart                                 重新执行脚本
+cont/c                                  继续执行，直到遇到下一个断点
+next/n                                  单步执行
+step/s                                  单步执行并进入函数
+out/o                                   从函数中跳出
+setBreakpoint()/sb()                    当前行设置断点
+setBreakpoint('f()')/sb('f()')          在f函数第一行设置断点
+setBreakpoint('script.js', 20)/sb(...)  在script.js的第20行设置断点
+clearBreakpoint/cb()                    清除所有断点
+breaktrace/bt                           显示当前调用栈
+list(num)                               显示当前行前后num行代码
+watch(expr)                             把表达式expr加入监视列表
+unwatch(expr)                           把表达式expr从监视列表移除
+watchers                                显示监视列表中所有的表达式和值
+repl                                    在当前上下文打开即时求值环境
+kill                                    终止当前执行的脚本
+scripts                                 显示当前已加载的所有脚本
+```
+
+
+[node introduce]:       http://baike.baidu.com/link?url=GKH3rgtiSD6E0ddvwwPeLjQ-EOCu3Fj9EH5JxwL_E8_rni1abrIoSC3u3SvUUnDx6V1ux3NfN5jVW0Gf-id8UJwEUz_m-X0d4Z9HsRg9BRDunef_L3zxFH0TY5pCxOYMu9hk3DLNIIkDl_7pQHN6eq

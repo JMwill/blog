@@ -1,0 +1,83 @@
+title: "git建立本地仓库"
+date: 2015-03-16 16:21:35
+tags:
+    - 笔记
+    - Git
+---
+近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程
+
+<!--more-->
+
+## 建立本地裸仓库
+
+在本地建立一个裸仓库（抱歉，还不明白什么是裸仓库后续补上解释）。
+
+```
+    #在本地建立一个空文件夹
+    mkdir -p storage.git #文件夹名字可以任取
+    cd storage.git
+    git init --bare #初始化裸仓库
+```
+
+这样就建立好了一个存储代码或者任意你喜欢的东西的仓库了。
+
+## 建立代码仓库
+
+```
+    mkdir code_test #存放自己编写的代码的文件夹
+    cd code_test
+    git init
+    git clone ~/your_path/storage.git
+```
+
+## 链接本地存储仓库
+
+```
+    #链接本地仓库，可以使用push origin master
+    git remote add origin ~/your_path/storage # origin可以使用其他你喜欢的名字
+```
+
+## 测试&脚本助手
+
+```
+    #现在已经可以使用仓库来存储代码
+    #首先创建一个测试文件
+    vim testfile
+    #输入你想写的
+    git add .
+    git push origin master
+    看是否有错误产生
+```
+
+下面来编写一个自己的脚本来进行日常提交
+
+`vim .push`
+
+输入下面的代码
+
+```
+    git pull origin master
+    git add .
+
+    if [ $# -gt 0 ]
+    then
+        mycommit=""
+        for arg in $@
+        do
+            mycommit="$mycommit $arg"
+        done
+
+    else
+        mycommit="auto commit"
+    fi
+
+    git commit -am "$mycommit"
+
+    git push origin master
+```
+
+保存后就拥有了简单的shell脚本，能够辅助提交同时支持自带评论。（记得要提供执行权限`chmod +x .push`)
+
+## 结语
+
+这次实现了本地仓库存储代码，能够在断网的状态下也可以进行代码的版本控制，顺带熟悉了一遍git的使用。

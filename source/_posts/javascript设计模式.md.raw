@@ -1,0 +1,289 @@
+title: javascript设计模式
+date: 2015-11-05 12:53:05
+tags:
+    - javascript
+    - 笔记
+---
+
+什么是设计模式？按照[维基百科](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA))/[百度百科](被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。)所说，设计模式是对软件设计中反复出现的各种问题所提出的解决方案。那么，JavaScript中的设计模式就是对在进行日常JavaScript开发中反复出现的问题的解决方案。那么下面就来说说JavaScript中的设计模式。
+
+<!-- more -->
+
+## 单体模式
+
+单体模式可以用来把相关代码组织在一起以便日后好维护、可以用作命名空间划分或者减少网页中全局变量的数量。JavaScript中的单体就是包含所有代码的全局对象：
+
+```
+var singleObj = {
+    name: 'single',
+    getName: function() {
+        return this.name;
+    },
+    init: function() {}
+}
+```
+
+或者
+
+```
+var singleObj = new function single() {
+    this.name = 'single';
+    this.getName = function() {
+        return this.name;
+    };
+}
+```
+
+上面的知识普通的单体，然而，日常中我们更需要用到的是只存在一个且重复调用方法不会覆盖的对象。这一点在JavaScript中使用闭包的特性可以轻松做到：
+
+```
+function singleObj() {
+    var obj;
+    return function() {
+        // create obj
+        if (!obj) {
+            obj = something
+        }
+        return obj
+    }
+}
+```
+
+更一般地，我们可以创建一个单体包装器：
+
+```
+function singleton(fn) {
+    var obj;
+    return function() {
+        return obj || (fn.apply(this, arguments));
+    }
+}
+```
+
+如上，我们就创建好了一个单体包装器，如此可以将需要创建单体对象的函数传入，返回值即是单体的函数。是不是很方便呢。
+
+## 工厂模式
+
+工厂模式就是提供一个创建一系列相关或相互依赖对象的接口，而无需指定他们具体的类。即把成员对象的创建工作转交给一个外部对象，能够消除对象之间的耦合（相互影响）。
+
+### 简单工厂模式
+
+将实例化对象的代码集中在一起。产生出的对象究竟是什么由系统环境，或者传入的参数决定，在所实例化的类型在编译期无法确定，而在执行期决定的情况。
+
+```
+var XMLHttpFactory = function() {};
+
+XMLHttpFactory.createXMLHttp = function() {
+    var XMLHttp = null;
+
+    if (window.XMLHttpRequest) {
+        XMLHttp = new XMLHttpRequest;
+    } else if (window.ActiveXObject) {
+        XMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return XMLHttp;
+}
+```
+
+
+### 抽象工厂模式
+
+先设计一个抽象类，这个类不能被实例化，只能用来派生子类，最后通过对子类的扩展实现工厂方法。其实也就是将相同或类似功能的代码放到同一个类内进行管理。
+
+```
+var XMLHttpFactory = function() {};
+
+XMLHttpFactory.prototype = {
+    createXMLHttp: function() {
+        throw new Error('could not be instantiated');
+    }
+};
+
+var myXHR = function() {
+    XMLHttpFactory.apply(this, arguments);
+};
+
+myXHR.prototype = new XMLHttpFactory;
+myXHR.prototype.constructor = myXHR;
+myXHR.prototype.createXMLHttp = function() {
+    var XMLHttp = null;
+
+    if (window.XMLHttpRequest) {
+        XMLHttp = new XMLHttpRequest;
+    } else if (window.ActiveXObject) {
+        XMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return XMLHttp;
+}
+```
+
+## 桥接模式
+
+将抽象与其实现隔离开来，可以用来弱化它与使用它的类和对象之间的耦合。方便二者独立变化。
+
+像一开始的单例模式里面的进阶版本其实就是桥接模式。它将单例的创建抽象化，使得实现的时候可以根据需要来进行。
+
+```
+// bad
+element.onclick = function() {
+    new useFun();
+}
+
+// good
+element.onclick = function() {
+    new dosomeFun(element, param, callback);
+}
+
+dosomeFun(element, param, callback) {
+    // do some with element
+    // use param to set
+
+    // finally use callback
+}
+```
+
+## 门面模式（外观模式）
+
+外观模式提供一个高层接口，这个接口使得客户端或子系统更加方便调用。门面模式的两个作用：1.简化类的接口; 2.消除类与使用它的客户代码之间的耦合。如：
+
+```
+Tom = {
+    name: 'tom',
+    age: 10
+};
+
+Tom.getName = function() { return this.name; }
+Tom.getAge = function() { return this.age; }
+Tom.getInfo = function() {
+    return this.getName() + ' ' + this.getAge();
+}
+```
+
+上面看到就是一个简单的外观模式，可能会说为什么会不直接在info中`return this.name + ' ' + this.age`，这样子呢？因为一次半次地进行特定的接口开发可以，但是我们没有精力去为每一次新的需求都添加特定的处理，而且在编程中复用是很重要的，因此，当我们具有基础的方法时，就可以通过组合现有的方法来开发一个新的接口，这样不仅减少工作量，当需要进行改动时，比如返回的name需要添加双引号，这时我们只需要修改getName函数就好。getInfo不用理会getName的细节。
+
+## 适配器模式
+
+将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+
+假设现在我已经开发了一个自己的小型库，具有基本的功能，但是在后来因为需求的原因，需要进行更复杂的操作，因此想要转而使用jQuery库，但是，项目是与别人一起开发的。小型库的基本操作别人已经用熟悉了，不好让别人在重新学习语法和库的用法，那么这时候可以使用适配器：
+
+```
+$myLib = function(node) {
+    return jQuery('#' + node)[0];
+}
+```
+
+当然上面的例子只是一个玩笑，需要知道的是适配器是为了让两个相互之间有差异的函数、方法或者资源等能够相互转换使用而不需要对原有的进行改动而出现的。这样我们就避免了改动原函数、方法或资源结构，减少对系统造成的影响。
+
+## 职责链模式
+
+职责链模式是一个对象A向另一个对象B发起请求，如果B不处理，可以把请求转给C，如果C不处理，又可以把请求转给D。一直到有一个对象愿意处理这个请求为止。
+
+形象的例子就是JavaScript中的事件冒泡，事件被触发之后会一直向上传递直到被捕获并停止传递或者传递到了根节点。
+
+## 访问者模式
+
+访问者模式先把一些可复用的行为抽象到一个函数(对象)里，这个函数就称为访问者（Visitor）。如果另外一些对象要调用这个函数，只需要把那些对象当作参数传给这个函数，在js里可以通过call或者apply的方式传递this对象给一个Visitor函数。
+
+```
+var Visitor = function() {};
+function method() {
+    //do something
+}
+Visitor.method = function() {
+    return method.apply(this, arguments);
+}
+
+var myObj = {};
+myObj.method = Visitor.method;
+myObj.method();
+```
+
+这里Visitor提供了可复用的方法，使得对象可以通过其进行调用。
+
+## 策略模式
+
+策略模式的意义是定义一系列的算法，然后封装起来，使得它们可相互间可替换。
+
+```
+checkList = {
+    checkName: function(name, wish) {
+        return name === wish ? true : false;
+    },
+    checkAge: function(age, max) {
+        return age < max ? true : false;
+    }
+}
+
+person.checkInfo = function(val) {
+    // do something to check;
+}
+person.checkInfo({
+    name: 'bill',
+    age: 10
+});
+```
+
+## 中介者模式
+
+中介者模式可以让各个对象之间不需要显示的相互引用，从而使其耦合松散，而且可以独立的改变它们之间的交互。中介者模式中把复杂的多对多关系, 变成了2个相对简单的1对多关系。不同于代理模式的是使用中介者的双方不需要知道彼此是谁，只要能够提供服务就行，而代理模式的话使用者A必然知道提供者B的一切。
+
+## 迭代器模式
+提供一种方法顺序访问一个聚合对象中各个元素，而又不需要暴露该方法中的内部表示。就如常用的each。
+
+```
+each = function(obj, fn) {
+    for (var i in obj) {
+        if (obj.hasOwnProperty(i)) {
+            if (fn.call(obj[i], i, obj[i]) === false) return false;
+        }
+    }
+}
+```
+
+## 备忘录模式
+
+在JavaScript中典型应用就是缓存常用的数据，避免每次都向服务器请求资源。
+
+```
+var Obj = function() {
+    var cache = {},
+        data;
+
+    return function(target) {
+        if (cache[target]) {
+            data = cache[target];
+        } else {
+            // get the data
+            cache[target] = data
+        }
+    }
+};
+```
+
+## 状态模式
+
+状态模式主要可以用于这种场景：一个对象的行为取决于它的状态；一个操作中含有庞大的条件分支语句。我们可以通过将状态归为一个状态类，把各种零散的状态进行集中管理，通过暴露的接口来进行响应。
+
+## 装饰者模式
+
+装饰者模式，顾名思义就是将函数装饰一番（添加功能或方法）。装饰者模式用于在不修改现有对象或派生子类的前提下为其添加方法。
+
+```
+
+```
+
+## 组合模式
+
+组合模式就是将所有对象组合成树形结构。使得用户只需要操作最上层的接口，就可以对所有成员做相同的操作。
+
+## 享元模式
+
+享元模式主要用来减少程序所需的对象个数。如当程序中实例化的对象个数很庞大，而实际需要展示或者使用到的对象并没有那么多时，我们可以建造一些共享的对象，在每次需要展示或者使用的时候就填充共享对象，避免创建过多的闲置对象占用系统资源。
+
+## 代理模式
+
+## 观察者模式
+
+## 命令模式

@@ -1,0 +1,367 @@
+title: "Django学习笔记"
+date: 2015-03-16 17:26:43
+tags: 
+    - 笔记
+    - Python
+    - Django
+---
+## 初步接触记录1：
+
+#### 建立一个项目：
+
+- 在需要储存代码的目录内运行以下命令：`django-admin.py startproject your_porject_name`，会生成以下目录结构：<!--more-->
+```
+your_porject_name/
+    manage.py
+    your_porject_name/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+其中最外层的根目录是项目所在的位置，允许任意更改
+manage.py是一个命令行工具，用于管理django项目
+内层的应用目录是项目里的一个python包。
+setting.py是Django项目的配置文件。
+urls.py是Django项目的URL声明
+```
+
+- 安装数据库：根据使用的不同的数据库在**setting.py**内的**ENGINE**项内填入相应的值，以及数据库所需要的**option**值
+- 运行`python manage.py migrate`在数据库中建立应用所需的相应的表。（注：在运行命令之前可以在**setting**内的**INSTALLED_APPS**中决定使用哪些应用
+- 开发所使用的服务器：运行`python manage.py runserver`命令来运行开发所使用的服务器。（注：可在其后接端口或ip地址加端口。如：8080， 0.0.0.0：8000）
+
+* * *
+
+#### 创建模型：
+
+- 在与**manage.py**相同的目录下：运行`python manage.py startapp your_app_name`，会生成以下目录结构：
+```
+polls/
+    __init__.py
+    admin.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+```
+
+- 根据开发习惯，一般会先开发**models**部分，开发完后再进行后续的视图和控制器的开发工作
+
+* * *
+
+#### 激活模型：
+
+- 在进行模型激活前，需要先在**setting**的**INSTALLED_APPS**中加入需要激活的应用的名称。（注：应用在项目目录下无需在项目前加入包名等，直接填入应用名称）
+- 包含应用后可以使用命令：`python manage.py makemigrations your_app_name`，将对模型的更改存储为*迁移文件*，可以通过查看`app_path/migrations/0001_initial.py`文件来查看
+- 想要查看迁移行为会执行那些sql语句可以运行命令：`python manage.py sqlmigrate app_name 0001`
+- 最后通过运行：`python manage.py migrate`来修改数据库
+
+* * *
+
+#### 使用API
+
+- 在Django中可以使用`python manage.py shell`的交互式命令行，因为**manage.py**里面设置了**DJANGO_SETTINGS_MODULE**环境变量，这个变量给定了Django需要导入的`app_name/settings.py`文件所在的路径。
+- 在交互式命令行中可以对数据库等进行探索，操作。
+    - 首先，需要导入所用的类`from app_name.models import model_one, model_two`
+    - 查看系统拥有的对象`model_one.objects.all()`
+    - 在系统中创建使用的对象`instance = model_one(...)`
+    - 保存对象`instance.save()`
+    - 其他操作
+- 查看对象的时候`model_one.objects.all()`返回的是没有意义的表达式，可以通过在模型中添加方法来解决。
+```
+class OwnClass(models.Model):
+    # ...
+    def __str__(self):              # 在Python 2中使用__unicode__
+        return self.some_text
+```
+- Django中添加自定义方法：直接在类中添加函数并传入：self 就可以
+
+#### 小认识
+
+- 在**Django**中创建项目，默认的时区时UTC，想要正确显示本地时间，需要修改`setting.py`文件内的`TIME_ZONE`为`Asia/Shanghai`
+
+* * *
+
+## 初步接触记录2
+
+#### 创建管理员账户
+
+- 在项目目录下运行`python manage.py createsuperuser`来创建管理员账户，按照提示填入信息。运行开发服务器后就可以在[这里](http://127.0.0.1:8000/admin/)看到登录界面
+
+* * *
+
+#### 编辑管理站点
+
+- 想要在管理站点中编辑应用的数据，就需要在应用的`admin.py`文件中进行注册登记。
+```
+    from django.contrib import admin
+    from yourapp.models import MODEL
+
+    admin.site.register(MLDEL)
+```
+
+- 注册后的应用还应该在`settion.py`中被包含，这样就可以在管理站点中看到**MODEL**的出现，并且可以对其进行编辑了。
+- 在注册后可以看到，**MODEL**可以进行一般的编辑。通过在`admin.py`中加入自定义控制类可以自定义管理界面中的对象表单。
+```
+    from django.contrib import admin
+    from yourapp.models import MODEL
+
+    class.MODELAdmin(admin.ModelAdmin):
+        fields = ['your_field1', 'your_field2']
+
+    admin.site.register(MODEL, MODELAdmin)
+```
+
+- 分割字段：对象表单的修改还可以进行字段分割使得页面以你的方式来显示
+```
+    class MODELAdmin(admin.ModelAdmin):
+        fieldsets = [
+            (None,               {'fields': ['your_field1']}),
+            ('information text', {'fields': ['your_field2']}),
+        ]
+```
+
+- 想要使得字段集能够折叠，可以在feilds添加后再加入一个`'classes':['collapse']`到字典中去。
+- 添加关联对象：像具有ForeignKey类型的字段在管理界面中会被显示为一个select框，就像一个问题会有多个选择一样，如果每个选择都要手动选择所属的问题的话，无形中增加了工作量，因此，在这里使用关联对象就能够使得添加更为方便。
+```
+    from django.contrib import admin
+    from yourapp.models import MODEL1, MODEL2
+
+    class MODEL2Inline(admin.StackedInline): #TabularInline为紧缩排列
+        model = Choice
+        extra = 3 #初始选项字段空间
+
+    class MODEL1Admin(admin.ModelAdmin):
+        fieldsets = [
+            (None,               {'fields': ['feild1']}),
+            ('Date information', {'fields': ['field2'], 'classes': ['collapse']}),
+        ]
+        inlines = [MODEL2Inline]
+
+    admin.site.register(MODEL1, MODEL1Admin)
+
+    #如上就是MODEL2的外键为MODEL1，因此进行关联后，在管理MODEL1的时候就可以直接进行MODEL2的创建了。
+```
+
+- **Django**admin中默认显示对象str()函数返回的内容，可以在`admin.py`使用`list_display`变量来实现这个功能，其接收一个包含显示字段名（或自定义方法）的元组，字段名将作为变更列表的列名出现`list_display = ('field1', 'field2', 'method')`。添加`list_filter`和`search_fields`属性能够增加“过滤器”侧边栏和搜索框。对模板中的方法进行属性的修改能够修改显示样式：`method.admin_order_field = 'one_field'
+- 自定义管理站点外观：想要自定义项目的管理站点的外观可以建立一个templates文件夹。然后修改或添加`setting.py`中的`TEMPLATE_DIRS=[os.path.join(BASE_DIR, 'templates)]` `TEMPLATE_DIRS`是一个包含文件系统路径的可迭代对象。当Django载入模板的时候会对它进行检查；它包含了搜索路径,然后复制**Django**源码中管理站点的模板目录（django/contrib/admin/templates）到templates中
+- 如果找不到Django源码可以运行以下程序：
+```
+    python -c "
+    import sys
+    sys.path = sys.path[1:]
+    import django
+    print(django.__path__)"
+```
+
+
+* * *
+
+## 初步接触记录3
+
+`注，由于解析的问题，%与} 前的\无实际意义，实际上不存在,要去掉`
+
+- **Django**页面内容需要由视图负责生成，一般情况下，视图处理函数放在`view.py`文件内处理。然后在**应用**目录内创建一个`urls.py`文件，来编写url匹配模式。如下：
+```
+    from django.conf.urls import patterns, url
+
+    from polls import views
+
+    urlpatterns = patterns('',
+        # 例如：/appName/
+        url(r'^$', views.index, name='index'),
+        # 例如：/appName/5/
+        url(r'^(?P<question_id>\d+)/$', views.detail, name='detail'),
+        # 例如：/appName/5/results/
+        url(r'^(?P<question_id>\d+)/results/$', views.results, name='results'),
+        # 例如：/appName/5/vote/
+        url(r'^(?P<question_id>\d+)/vote/$', views.vote, name='vote'),
+    )
+    #里面"?P<question_id>"定义了所“捕获”的字符串的名字
+```
+
+- 下一步让主**URLconf**，加入`url(r'^appName/', include('appName.urls')),`，regex的最后使用的是一个**/**，没有使用**$**作为结尾，原因是调用`include()`时，之前匹配到的字符串去掉，剩下的部分交给`include()`指定的URLconf处理。
+- `url()`可以传递4个参数，其中**regex**和**view**是必须的。regex就是匹配url的正则表达式。而view则是在匹配到请求的url时调用给定的视图函数，并传递**HttpRequest**对象作为视图的第一个参数，正则捕获的所有值作为视图函数的其他参数，如果正则表达式是用最简单的捕获方式捕获的值，这些值将按照捕获位置的前后顺序，被代入函数；如果正则表达式在捕获参数时，命名了这些参数，那么这些参数将以关键字参数的形式被代入函数。
+- 在**Django**中，每个视图函数只负责处理两件事中的一件：返回一个包含所请求界面内容的HttpResponse对象，或者引发一个诸如Http404的异常。
+- 想要使用模板系统，而又不增加应用的耦合度，最好是在应用目录下创建一个`templates`的文件夹，在`templates`内再创建一个应用文件夹`appName/`在`appName/`里面就可以创建我们自己的模板文件了。在`templates`内再创建一个与应用同名的文件夹是因为**Django**无法区分不同的应用中存在着拥有相同名字的模板文件，这样，我们就可以使用命名空间来区分，也就是将这些模板文件放在以应用的名字来命名的另一个文件夹下。
+- **Django**中最普通的处理方法是载入一个模板文件，然后填充一个上下文变量，接着返回一个含有模板渲染结果的**HttpResponse**对象。但是可以使用**Django**提供的快捷方式，`render()`函数
+```
+    #原方法
+    from django.http import HttpResponse
+    from django.template import RequestContext, loader
+
+    from appName.models import Question
+
+    def index(request):
+        latest_question_list = Question.objects.order_by('-pub_date')[:5]
+        template = loader.get_template('polls/index.html')
+        context = RequestContext(request, {
+            'latest_question_list': latest_question_list,
+        })
+        return HttpResponse(template.render(context))
+
+    #现方法
+    from django.shortcuts import render
+
+    from appName.models import Question
+
+    def index(request):
+        latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
+        context = {'latest_question_list': latest_question_list}
+        return render(request, 'polls/index.html', context)
+```
+
+- 在显示页面时会遇到无法在数据库中找到相关索引的情况。在这个时候我们需要引发一个404页面。
+```
+    #通常做法
+    from django.http import Http404
+    from django.shortcuts import render
+
+    from polls.models import Question
+    # ...
+    def detail(request, question_id):
+        try:
+            question = Question.objects.get(pk=question_id)
+        except Question.DoesNotExist:
+            raise Http404
+        return render(request, 'polls/detail.html', {'question': question})
+
+    #Django快捷方式“get_object_or_404()”还有“get_list_or_404()”
+    from django.shortcuts import get_object_or_404, render
+
+    from polls.models import Question
+    # ...
+    def detail(request, question_id):
+        question = get_object_or_404(Question, pk=question_id)
+        return render(request, 'polls/detail.html', {'question': question}) #传递了question对象到模板的上下文变量中。
+```
+
+- 在上面的演示代码中可以看到**question**变量被传递到了模板中，因此在模板中就可以使用这一个，对象进行操作。
+```
+    <h1>{{ question.question_text }}</h1>
+    <ul>
+    \{\% for choice in question.choice_set.all \%\}
+        <li>{{ choice.choice_text }}</li>
+    \{\% endfor \%\}
+    </ul>
+    <!-- 在\{\% for \%\}循环中出现了方法调用：question.choice_set.all被解释成了Python代码question.choice_set.all()，它返回了一组可迭代的Choice对象。这组对象可以在\{\% for \%\}标签中使用。 -->
+```
+
+- 在模板中写**a**链接时，尽量不要把硬链接写在里面，而可以使用在`appName.urls`模块的`url()`函数中定义了的**name**参数，在模板的URL配置中可以通过使用`\{\% url \%\}`模板标签来移除对于特定的URL路径的依赖，`<li><a href="\{\% url 'detail' question.id \%\}">{{ question.question_text }}</a></li>`
+- 假如在真实的项目中有许多的应用，当在应用中出现重名的视图时，模板中的`\{\% url \%\}`将需要另外一些改动才能够正确使用
+```
+    #在主URLconf下添加命名空间。
+    from django.conf.urls import patterns, include, url
+    from django.contrib import admin
+
+    urlpatterns = patterns('',
+        url(r'^polls/', include('polls.urls', namespace="polls")),
+        url(r'^admin/', include(admin.site.urls)),
+    )
+```
+
+```
+    #视图链接从
+    <li><a href="\{\% url 'detail' question.id \%\}">{{ question.question_text }}</a></li>
+
+    #改成
+    <li><a href="\{\% url 'polls:detail' question.id \%\}">{{ question.question_text }}</a></li>
+```
+
+* * *
+
+#### 初步接触记录4
+
+在后台开发中，表单无疑是在开发中占据了较大比重的一项。因此**Django**提供了许多好用的api来供我们使用。但是我们也需要遵守一些约定俗成的规则
+
+- 无论何时，当需要创建一个可以改变服务器端数据的表单时，请使用method="post"。
+- 为了防止跨站点请求伪造，在所有针对内部URL的POST表单中添加`\{\% csrf_token \%\}`模板标签。
+- 进行服务器端数据修改后，一般使用一个**HttpResponseRedirect**对象，将重定向到指定的URL，在构造**HttpResponseRedirect**对象的参数时，使用reverse()函数。这个函数可以帮助我们避免在视图中出现硬编码的URL。它需要给出想要跳转的视图的名字和该视图所对应的URL模式中需要给该视图提供的参数。
+- 使用通用视图：根据URL中的参数从数据库中获取数据，载入模板文件，返回渲染之后的模板。这是一种特别常见的情况，因此**Django**提供了一种快捷方式，叫做“通用视图”系统。
+```
+    #appName/urls.py文件
+    from django.conf.urls import patterns, url
+
+    from polls import views
+
+    urlpatterns = patterns('',
+        url(r'^$', views.IndexView.as_view(), name='index'),
+        url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+        url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
+        url(r'^(?P<question_id>\d+)/vote/$', views.vote, name='vote'),
+    )
+
+    #appName/views.py文件
+    from django.shortcuts import get_object_or_404, render
+    from django.http import HttpResponseRedirect
+    from django.core.urlresolvers import reverse
+    from django.views import generic
+
+    from polls.models import Choice, Question
+
+    class IndexView(generic.ListView):
+        template_name = 'polls/index.html'
+        context_object_name = 'latest_question_list'
+
+        def get_queryset(self):
+            """返回最新发布的五个议题。"""
+            return Question.objects.order_by('-pub_date')[:5]
+
+    class DetailView(generic.DetailView):
+        model = Question
+        template_name = 'polls/detail.html'
+
+    class ResultsView(generic.DetailView):
+        model = Question
+        template_name = 'polls/results.html'
+
+    #这里使用了两个通用视图：ListView和DetailView。这两个视图可用于显示两种抽象概念，分别为“显示一列对象列表”和“显示一个特定类型的对象的详细信息页”。
+
+    #每一个视图需要知道它将作用于什么模型。这个信息是由视图类里的model属性来提供的。
+    #通用视图DetailView期望从URL中捕获名为"pk"的主键值
+
+    #默认地，通用视图DetailView会使用名称为<应用名>/<模型名>_detail.html的模板。在我们的例子中，它将使用"polls/question_detail.html"这个模板。template_name属性是用来告诉Django，我们需要为要使用的模板指定一个名称，来替代默认生成的名称。同时，这确保结果视图和细节视图即使都有一个DetailView隐藏在幕后，在渲染后也会拥有不同的外观。
+
+    #在视图DetailView中，question变量是被默认提供的－由于我们使用了一个Django模型（Question），Django能够为上下文变量提供一个合适的名字。然而，对于ListView来说，自动生成的上下文变量的名字为question_list。我们可以使用context_object_name属性来重写这个名字，
+```
+
+* * *
+
+#### 初步接触记录5
+
+- 在开发**Django**应用的时候，我们需要引入自动化测试。这样做能够使我们在开发的过程中，避免繁重的手动测试工作。同时，测试可以划分为不同的级别，或专注于小细节等等。这样做在开发的时候便能够使得应用出错较少。向着我们想要的方向发展。
+- 创建测试来暴露漏洞。应用程序的测试文本一般放在`test.py`文件中，测试系统会自动在任何以test开头的文件中查找测试文本。文本内容例子：
+```
+    import datetime
+
+    from django.utils import timezone
+    from django.test import TestCase #创建测试需要用到
+
+    from appName.models import MODEL
+
+    class MODELMethodTests(TestCase): #创建测试类
+
+        def test_method(self): #创建测试方法，需要以**test**开头
+            """
+            描述
+            """
+            time = timezone.now() + datetime.timedelta(days=30)
+            future_question = Question(pub_date=time)
+            self.assertEqual(future_question.was_published_recently(), False) #测试返回值与期待值是否吻合
+```
+
+- 在编写完测试代码后，运行测试`python manage.py test appName`。
+    * 其中测试系统在polls应用中查找测试。
+    * 发现`django.test.TestCase`的子类。
+    * 创建特定数据库
+    * 查找用于测试的方法-以**test**开头
+    * 执行方法
+
+- 在测试时，我们可以编写多个方法来进行测试。测试系统会一一帮我们进行方法的调用，免却我们自己手动测试bug的麻烦。
+- **Django**测试客户端：**Django**提供了一个测试客户端来模拟用户和代码的交互。需要在`test.py`中引入`from django.test import Client`
+- 在**Django**中测试越多越好，最好写一个测试一次，因为测试程序不像应用程序代码，在测试代码中，当应用有所修改而测试代码已经不适用的时候我们可以直接删除，而当应用并没有修改的时候，先前编写的测试代码并不会对我们有任何影响，可以一直存在。但是还是需要遵守一些点：
+    - 为每个模型或者视图建立一个单独的TestClass类
+    - 为你想测试的每一种情况建立一个单独的测试方法
+    - 在测试方法的名字中指明他们的作用
+
+* * *
