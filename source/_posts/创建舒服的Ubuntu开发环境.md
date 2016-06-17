@@ -7,11 +7,7 @@ tags:
 
 <!-- more -->
 
-## 路线
-
 ***
-
-* [材料准备](#pre-ready)
 
 ## 材料准备
 
@@ -19,7 +15,7 @@ tags:
 * 翻墙软件一枚；
 * 已点翻墙天赋；（想要点翻墙技能可以点击[这里][will email]
 * 装备VMware软甲；（[软甲在此][VMware]）
-* 较为熟悉命令行操作；（步步高点读机，不会就点[这里][Command Line]
+* 较为熟悉命令行操作；（步步高点读机，不会就点[这里][Command Line]）
 
 好了，材料就先准备这些先，之后会慢慢补充进去的。
 
@@ -150,6 +146,10 @@ git config --global color.ui true
 
 参考链接：[开发舒适的python开发环境][soft-python-env]
 
+[Ubuntu desktop]:              http://www.ubuntu.org.cn/download/desktop
+[will email]:                  mailto://787505998@qq.com
+[VMware]:                      https://my.vmware.com/cn/web/vmware/downloads
+[Command Line]:                http://billie66.github.io/TLCL/
 [shadowsocks]:                 https://github.com/librehat/shadowsocks-qt5/wiki/Installation
 [git-flow]:                    http://nvie.com/posts/a-successful-git-branching-model/
 [git-flow-usage]:              http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
