@@ -102,8 +102,15 @@ DrRacket是一个以两个简单的互动窗格来支持非常好玩的面向结
 
 这本书包括6个部分，每个部分分成五个插曲以及加上由序幕和尾声组成的结尾。而主要的部分专注于程序设计，插曲介绍了一些有关于程序设计力学与计算的补充概念。
 
-[序言: 如何编程](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html)简要介绍了普通编程。它说明了如何用*SL写一个简单的动画。一旦完成，任何初学者势必既感到充满力量又不知所措，最后的要点解释了为何普通编程错误的以及如何通过系统地循序渐进的程序设计方法消除每一个初级程序员都会面对的恐惧情绪。接下来就是这本书的核心阶段。
+[序言: 如何编程][Prologue-How-To-Program]简要介绍了普通编程。它说明了如何用*SL写一个简单的动画。一旦完成，任何初学者势必既感到充满力量又不知所措，最后的要点解释了为何普通编程错误的以及如何通过系统地循序渐进的程序设计方法消除每一个初级程序员都会面对的恐惧情绪。接下来就是这本书的核心阶段。
 
-- [固定大小数据](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html)用最简单的例子介绍了最根本的系统化设计概念。中心思想是设计者通常对程序支持对数据进行哪些处理和产出有粗略的构思，因此一个系统的设计方法必须尽可能地提取描述流进流出程序中的数据中的线索。为了简单起见，这一部分开始于原子数据-数字，图像以及其他等等，然后渐渐介绍其他描述数据的新方法：区间，枚举，序列，结构，以及这些的组合体。
-- [插曲: BSL](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._i1-2%29)描述教学语言的全部细节：它的词汇，语法，以及含义。计算机科学家参考这些作为语法和语义，程序设计者用这些计算模型展示他们创作的东西在运行或者进行错误诊断分析时是怎么计算的。
+- [固定大小数据][Fixed-Size-Data]用最简单的例子介绍了最根本的系统化设计概念。中心思想是设计者通常对程序支持对数据进行哪些处理和产出有粗略的构思，因此一个系统的设计方法必须尽可能地提取描述流进流出程序中的数据中的线索。为了简单起见，这一部分开始于原子数据-数字，图像以及其他等等，然后渐渐介绍其他描述数据的新方法：区间，枚举，序列，结构，以及这些的组合体。
+- [插曲: BSL][Intermezzo-BSL]描述教学语言的全部细节：它的词汇，语法，以及含义。计算机科学家参考这些作为语法和语义，程序设计者用这些计算模型展示他们创作的东西在运行或者进行错误诊断分析时是怎么计算的。
+- [任意大数据][Arbitrarily-Large-Data]扩展自[固定大小数据][Fixed-Size-Data]用方法来描述最有趣、最有用的数据形式：任意大规模复合数据。而一些程序员可能将各种[固定大小数据][Fixed-Size-Data]进行嵌套来代表信息，这种嵌套往往是固定深度和宽度的。这一部分展示了如何通过微妙的泛化让我们从前面的嵌套到任意大小的数据。关注点之后会切换到系统化设计程序来处理这类型数据上。
+- [插曲：引用，结束引语][Intermezzo-Quote-Unquote]介绍简洁有用的符号用于写下大块的数据：引用以及反引用
 
+[Prologue-How-To-Program]:  http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
+[Fixed-Size-Data]:          http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html
+[Intermezzo-BSL]:           http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._i1-2%29
+[Arbitrarily-Large-Data]:   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html
+[Intermezzo-Quote-Unquote]: http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html#%28part._i2-3%29
