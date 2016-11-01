@@ -108,9 +108,26 @@ DrRacket是一个以两个简单的互动窗格来支持非常好玩的面向结
 - [插曲: BSL][Intermezzo-BSL]描述教学语言的全部细节：它的词汇，语法，以及含义。计算机科学家参考这些作为语法和语义，程序设计者用这些计算模型展示他们创作的东西在运行或者进行错误诊断分析时是怎么计算的。
 - [任意大数据][Arbitrarily-Large-Data]扩展自[固定大小数据][Fixed-Size-Data]用方法来描述最有趣、最有用的数据形式：任意大规模复合数据。而一些程序员可能将各种[固定大小数据][Fixed-Size-Data]进行嵌套来代表信息，这种嵌套往往是固定深度和宽度的。这一部分展示了如何通过微妙的泛化让我们从前面的嵌套到任意大小的数据。关注点之后会切换到系统化设计程序来处理这类型数据上。
 - [插曲：引用，结束引语][Intermezzo-Quote-Unquote]介绍简洁有用的符号用于写下大块的数据：引用以及反引用
+- [抽象化][Abstration]认知，从[任意大数据][Arbitrarily-Large-Data]的众多功能中得来。没有一个编程语言应该迫使程序员去创建那些相互之间具有相似功能的代码。反过来，好的程序语言有办法消除这些相似性。计算机程序设计将这些消除相似性的步骤以及它的结果叫做抽象，同时，他们知道，抽象化能够极大地提高程序员的生产力。因此，这一部分介绍创造以及使用抽象的设计方法。
+- [插曲：域和抽象][Intermezzo-Scope-and-Abstraction]扮演两个角色。一方面，它注入词域的概念，这主意能让程序语言通过内含的命名定义（程序员能通过代码检查来找到）进行联系。另一方面，它用一个库来说明抽象的额外机制，包括所谓的循环。
+- [交织的数据][Intertwined-Data]归纳了[任意大数据][Arbitrarily-Large-Data]且明确地引入了迭代细化的设计概念到目录当中。
+- [插曲：数的性质][Intermezzo-The-Nature-of-Numbers]解释了为什么在所有程序语言中十进制数会以一种如此陌生的方式运行。所有程序初学者都应该去了解这些基础事实；而在本书的内容中，很容易去讨论或者演示这些思路。
+- [递归生成][Generative-Recursion]注入了一种全新的设计思想。尽管结构化设计以及抽象化已经能够满足大多数程序员遇到的问题，但是，它们偶尔也会导致程序不那么“高性能”。换句话说，结构化设计的程序可能需要更多的时间或者内存或能量来计算期望的答案。因此计算机科学家们替换结构化程序的设计方案为有益于对指定问题域有特别见解的程序。这本书的这一部分展示了如何设计这一大类的程序。
+- [插曲：计算的成本][Intermezzo-The-Cost-of-Computation]用[递归生成][Generative-Recursion]中的例子来演示计算机科学家们是如何考量性能的。
+- [累加器][Accumulators]为设计者的工具箱添加了最后一个绝招：累加器，通俗地讲，一个累加器让程序具有“记忆能力”，加入了记忆能力极大地提高了这本书前四章里的结构化设计的函数的性能，对于[递归生成][Generative-Recursion]中的特设程序，累加器能让找到所有答案以及找不到一个答案之间有所区分。
+- [结语：继续前行][Epilogue-Moving-On]既是对下一步的一个评估，也是展望。
 
-[Prologue-How-To-Program]:  http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
-[Fixed-Size-Data]:          http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html
-[Intermezzo-BSL]:           http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._i1-2%29
-[Arbitrarily-Large-Data]:   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html
-[Intermezzo-Quote-Unquote]: http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html#%28part._i2-3%29
+![图二：每一部分以及插曲的依赖](/images/pict.png)
+
+[Prologue-How-To-Program]:              http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
+[Fixed-Size-Data]:                      http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html
+[Intermezzo-BSL]:                       http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._i1-2%29
+[Arbitrarily-Large-Data]:               http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html
+[Intermezzo-Quote-Unquote]:             http://www.ccs.neu.edu/home/matthias/HtDP2e/part_two.html#%28part._i2-3%29
+[Abstration]:                           http://www.ccs.neu.edu/home/matthias/HtDP2e/part_three.html
+[Intermezzo-Scope-and-Abstraction]:     http://www.ccs.neu.edu/home/matthias/HtDP2e/part_three.html#%28part._i3-4%29
+[Intertwined-Data]:                     http://www.ccs.neu.edu/home/matthias/HtDP2e/part_four.html
+[Generative-Recursion]:                 http://www.ccs.neu.edu/home/matthias/HtDP2e/part_five.html
+[Intermezzo-The-Cost-of-Computation]:   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_five.html#%28part._i5-6%29
+[Accumulators]:                         http://www.ccs.neu.edu/home/matthias/HtDP2e/part_six.html
+[Epilogue-Moving-On]:                   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_epilogue.html
