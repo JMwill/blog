@@ -136,7 +136,34 @@ DrRacket是一个以两个简单的互动窗格来支持非常好玩的面向结
 
 ## 区别
 
+第二版的“How to Design Programs”跟第一版的几个主要方面有所不同。
 
+1. 第二版明确承认了设计整个程序与设计构造程序的函数之间的不同。特别地，这一版本专注于两种类型的程序：事件驱动型（大部分是GUI程序，也有网络程序）以及批处理程序。
+2. 程序的设计在规划阶段应用的是自顶向下的设计流程，然后是自底向上的构造阶段。我们明确地库的借口是如何指挥某些程序元素的外形的。尤其是在程序设计的最初始阶段产生出一个函数期望列表。而期望清单的概念在第一版已经存在，第二版明确地将它作为设计要素之一。
+3. 依靠“设计菜谱”完成函数期望清单的条目，是第六部分的主题。
+4. 结构化设计的关键元素是组成其他东西的函数的定义。这种组合设计十分适合批处理程序这个领域。像递归生成，它需要一个尤卡里（问题的答案）特别是一个可识别的的中间数据，通过一个函数以及过程处理中间结果，再通过第二个函数简化整体设计。这个方法也需要期望清单，但是制定这些期望需要对中间数据进行有洞察力的开发。这一版本的书编织了许多明确的组合设计的练习。
+5. 测试永远是我们的设计哲学中的一部分，就在我们公开第一版之后，教学语言以及DrRacket在2002年就开始正确地支持它。这新的版本很大程度上依赖于测试支持。
+6. 这一版本放弃了命令式程序的设计。旧的章节依然在线，其中的资料会出现在这一系列的第二卷"How to Design Components."
+7. 书中的例子以及练习需要采用新的教学包。首选的风格是通过[require][require]链接这些库，但是也可以通过DrRacket菜单添加教学包。
+8. 最后，第二版的术语跟符号与第一版的有些许不同。
+    ```
+    Second Edition ------------- First Edition
+    signature                    contract
+    itemization                  union
+    '()                          empty
+    #true                        true
+    #false                       false
+    ```
+
+最后的三个不同点大大地提高了列表中的引用（的方便程度）
+
+---
+
+## [第一版的致谢][Acknowledgments-Of-First-Edition]
+
+---
+
+## [第二版致谢][Acknowledgments]
 
 [Prologue-How-To-Program]:              http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
 [Fixed-Size-Data]:                      http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html
@@ -150,3 +177,6 @@ DrRacket是一个以两个简单的互动窗格来支持非常好玩的面向结
 [Intermezzo-The-Cost-of-Computation]:   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_five.html#%28part._i5-6%29
 [Accumulators]:                         http://www.ccs.neu.edu/home/matthias/HtDP2e/part_six.html
 [Epilogue-Moving-On]:                   http://www.ccs.neu.edu/home/matthias/HtDP2e/part_epilogue.html
+[require]:                              http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._require%29%29
+[Acknowledgments-Of-First-Edition]:     http://www.ccs.neu.edu/home/matthias/HtDP2e/part_preface.html#(part._.Acknowledgments_from_the_.First_.Edition)
+[Acknowledgments]:                      http://www.ccs.neu.edu/home/matthias/HtDP2e/part_preface.html#(part._.Acknowledgments)
