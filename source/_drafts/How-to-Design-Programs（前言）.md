@@ -119,6 +119,25 @@ DrRacket是一个以两个简单的互动窗格来支持非常好玩的面向结
 
 ![图二：每一部分以及插曲的依赖](/images/pict.png)
 
+独立的读者应该从头到尾做完这整本书。我们说“做完”是因为我们的意思真的是说一个读者应该解决所有的练习或者至少知道如何解决它们。
+
+同样地，讲师从序幕一直到结语应该覆盖尽可能多的内容。我们的教学经验建议是可行的。特别地，我们组织了我们的课程，因此我们的读者通过学期内的课程能够创造了一个相当大的娱乐程序。然而我们知道，某些情况下（课程）需要大幅削减或者一些讲授者对这本书的使用会有自己的风格。
+
+图二是给那些希望从书中选择相关部分学习的人的一个导航图。那是一张依赖图，从一项到另一项的实箭头建议严格按照顺序来看；比如，第二部分要求对第一部分完全理解。与之对比的是，虚箭头大多是建议按照顺序来阅读；如读懂序言对读本书剩下的内容不是必须的。
+
+按照这个阅读路线图，这里有三个可行的阅读路径：
+- 一个中学讲师可能想要（尽可能）涉及第一以及第二部分，包括一个小型项目，如一个游戏。
+- 一个大学讲师在四分之一学制内可能希望专注于[固定大小数据][Fixed-Size-Data]、[任意大数据][Arbitrarily-Large-Data]、[抽象化][Abstration]和[递归生成][Generative-Recursion]，外加*SL以及域这两个插曲。
+- 一个大学讲师在整个学制内可能较为喜欢尽可能早地讨论设计中的性能权衡。在这种情况中，最好覆盖[固定大小数据][Fixed-Size-Data]以及[任意大数据][Arbitrarily-Large-Data]接着是[累加器][Accumulators]章节中的并不依赖于[递归生成][Generative-Recursion]的累加器素材。到那时候，就可以讨论[插曲：计算的成本][Intermezzo-The-Cost-of-Computation]以及从这个角度开始学习本书剩下的章节。
+
+**样例主题的复述**这本书一次又一次地回顾了某些样例话题以及练习。比如，虚拟宠物在[固定大小数据][Fixed-Size-Data]中随处能找到，甚至出现在[任意大数据][Arbitrarily-Large-Data]中。同样地，[固定大小数据][Fixed-Size-Data]以及[任意大数据][Arbitrarily-Large-Data]覆盖了实现交互式文本编辑器的替代方法。图形出现在[迭代生成][Generative-Recursion]中，然后有马上出现在[累加器][Accumulators]中。这些重复的目的是为了激励进行迭代细化，并通过其他途径介绍（概念）。我们敦促讲师来分配这些主题序列的练习或者创造他们自己的序列。
+
+---
+
+## 区别
+
+
+
 [Prologue-How-To-Program]:              http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
 [Fixed-Size-Data]:                      http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html
 [Intermezzo-BSL]:                       http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._i1-2%29
