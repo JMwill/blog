@@ -114,4 +114,182 @@ function call: expected a function after the open parenthesis, found a number
 
 ---
 
-## 算术，还是算术
+## 算术和算法
+
+如果编程仅仅是跟数字与算术相关，那它就会像是数学一样无趣。幸运的是，我们还可以对数字以外的更多东西进行编程：文本，真假，图片以及更多。
+
+在BSL中你需要知道的第一件事是文本是指在双引号`"`包裹下的一串任意键盘字符组成的序列。我们把它叫做字符串。因此，`"hello world"`就是一个准确的字符串；然后当DrRacket对字符串求值的时候，它就仅仅是将它打印到互动区域里面去，就像一个数字一样：
+
+```
+> "hello world"
+"hello world"
+```
+
+实际上，很多人的第一个程序就是显示这个字符串。
+
+其次，你需要知道的是DrRacket除了能对数字做算术外，也能对字符串做算术运算。所以这里有两个字符串算术的事例展示：
+
+```
+> (string-append "hello" "world")
+"helloworld"
+> (string-append "hello " "world")
+"hello world"
+```
+
+就像是`+`，`string-append`是一个操作符；它通过将第二个字符串添加到第一个字符串的后面来生成一个新的字符串。如第一个互动展示那样，它就像字面上说的那样做了，没有在两个字符串之间添加任何东西：没有空格，没有逗号，什么都没有。因此，如果你想要“hello world”这个短语，实际上你需要在这两个词之间任意一个上添加一个空格；这就是第二个互动展示上显示的东西。当然，最自然的用这两个词创造短语的方法是输入：
+
+`(string-append "hello" " " "world")`
+
+因为`string-append`就像`+`一样，可以像预期那样操作多个操作数。
+
+除了附加字符串外，你还可以做其他更多的事情。你可以从字符串中提取其中某部分；翻转字符串序列；将所有字符渲染成大写（或者小写）；将字符串的左边和右边的空格去掉；等等。而最好的是，你无需记住任何这些东西，如果你需要知道你能对字符串做什么，只需要看帮助文档就好。
+
+如果你查看BSL的原始操作符，你会看到原始操作符（有时也叫预定义或者內建操作符）能够处理字符串然后返回数字：
+
+```
+> (+ (string-length "hello world") 20)
+31
+> (number->string 42)
+"42"
+```
+
+也有操作符能够将字符串转化成数字：
+
+```
+> (string->number "42")
+42
+```
+
+如果你期望“forty-two”或者显示其他更聪明的行结果，很抱歉，这真的字符串计算器返回的不是你所期望的那样。
+
+最后的的表达式带来了一个问题，比如，如果一个人用`string->number`来处理不是数字的包裹在字符串引号内的字符串会怎么样。在这个情况下，这个操作会返回完全不同类型的结果：
+
+```
+> (string->number "hello world")
+#false
+```
+
+这既不是一个数字又不是一个字符串；这是一个布尔值。不像数字或者字符串，布尔值只有两种数值：`#true`以及`#false`，第一个是真值，第二个是假值。即使这样，DrRacket也有几个操作符来对布尔值进行组合：
+
+```
+> (and #true #true)
+#true
+> (and #true #false)
+#false
+> (or #true #false)
+#true
+> (or #false #false)
+#false
+> (not #false)
+#true
+```
+
+然后你得到操作显示的结果。（不知道什么是`and`，`or`以及`not`运算？很简单：`(and x y)`如果x跟y都是真的，结果就是真的；`(or x y)`x或者y里面有任意一个是真的或者全部是真的，结果就是真的。最后`(not x)`当x是假的时候，结果就是真的。
+
+尽管不可能将一个数字转换成布尔值，但是将两个数字转换成布尔值是十分必要的：
+
+```
+> (> 10 9)
+#true
+> (< -1 0)
+#true
+> (= 42 9)
+#false
+```
+
+停停停停！试下输入这些：`(>= 10 10), (<= -1 0), 跟(string=? "design" "tinker")`。最后一个跟之前又完全不同了，但是不用担心，你能做到的。
+
+这些漂浮在身边的新的数据以及操作符，是的，数字，字符串跟布尔值就是数据，很容易就让我们忘记一些基本的东西，像嵌套运算：
+
+```
+(and (or (= (string-length "hello world")
+            (string->number "11"))
+         (string=? "hello world" "good morning"))
+     (>= (+ (string-length "hello world") 60) 80))
+```
+
+这个表达式的结果是什么？你是怎么想的？全部是你自己计算的？还是你输入到DrRacket的互动区域然后点击“return”键？如果你是做了后者，你会认为你自己知道怎么做吗？毕竟，如果你不能预测DrRacket中小的表达式做了什么，那么当你提交大的任务的时候，你可能也不愿意相信它的运算结果。
+
+在我们向你展示收入那么是真正的编程之前，让我们讨论一下一个增添数据趣味的东西，当你插入一个图片到互动区域并点击回车键的时候，像这样：
+
+\> ![插入图片][rocket]
+
+DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图片，同时支持对图片进行运算就像支持数值或者字符串的运算一样。简单来说，你的程序能够对图片进行计算，同时你也能够在互动区域上做这些事情。此外，BSL程序员会创造其他人也觉得有用的库，就像其他程序语言的程序员一样。运用这些库就像是用新的词语扩大了你的词汇量或者你的编程词汇表新增了原始函数一样。我们将这些库称作教学包，因为它们有利于教学。
+
+一个重要的库 —— **2htdp/image** 支持对图片的宽高进行计算：
+
+(* (image-width ![插入图片][rocket]) (image-height ![插入图片][rocket]))
+
+一旦你添加这个库到你的程序后，点击RUN会得到 **1176** 这个结果，因为这是这个图片宽高相乘的结果：28 × 42
+
+你没有必要用Google去找图片然后在菜单中找到"Insert"来插入它们到DrRacket程序中，你也可以命令DrRacket来从头创建简单的图片：
+
+`> (circle 10 "solid" "red")`
+
+![红色的圆][red-circle]
+
+`> (rectangle 30 20 "outline" "blue")`
+
+![蓝色方框][blue-rectangle]
+
+当结果是图片的时候DrRacket会画出结果，但是BSL程序处理图片数据就像处理数字一样。尤其是，BSL能够进行合并图片的操作，就像它对数字有加法操作，对字符串有拼合操作一样。
+
+```
+> (overlay (circle 5 "solid" "red")
+           (rectangle 20 20 "solid" "blue"))
+```
+
+![拼合图片][overlay-picture]
+
+用相反的顺序覆盖这些图片会得到实心的蓝色长方形：
+
+```
+> (overlay (rectangle 20 20 "solid" "blue")
+           (circle 5 "solid" "red"))
+```
+
+![实心长方形][revert-overlay]
+
+停下来，并思考一会儿这最后的结果
+
+就像你看到的，overlay就更像是string-append而不是+号，但是它做加这个操作的时候就像string-append一样“加上”字符串以及像+号一样加上数字。下面是相关想法的另一个事例：
+
+```
+> (image-width (square 10 "solid" "red"))
+10
+> (image-width
+    (overlay (rectangle 20 20 "solid" "blue")
+             (circle 5 "solid" "red")))
+20
+```
+
+这些DrRacket的互动操作没有描画任何东西，它仅仅只是测量图片的宽度。
+
+另外两个重要操作：[empty-scene][empty-scene]以及[place-image][place-image]，第一个是用来创建场景的，一个特殊的方形。第二个用来放置一个图片到这样的一个场景中：
+
+```
+(place-image (circle 5 "solid" "green")
+             50 80
+             (empty-scene 100 100))
+```
+
+然后你就会得到这样的一个图片
+
+![scene][scene]
+
+就像你从图片中看到的那样，左上角的就是原点（或者说(0, 0)），不像数学中那样，y轴是向下测量的，而不是向上。否则，图片不会像你预期那样一个绿色的实心圆在坐标(50, 80)在一个100乘100的空心方形上。
+
+让我们再来总结一下，编程其实是写下一些算术表达式，但是你不在被限制为只能用无趣的数字。在BSL语言中，算术是数字、字符串、布尔值甚至是图片的算术。而尽管计算依然意味着确定表达式的值，除了该值可以是一串字符，一个数字，一个布尔值或者一张图片。
+
+现在，我们已经准备写程序来让火箭飞起来了。
+
+
+
+[rocket]:     /images/How-to-Design-Programs/rocket.png
+[red-circle]: /images/How-to-Design-Programs/pict_2.png
+[blue-rectangle]: /images/How-to-Design-Programs/pict_3.png
+[overlay-picture]: /images/How-to-Design-Programs/pict_4.png
+[revert-overlay]: /images/How-to-Design-Programs/pict_5.png
+[scene]: /images/How-to-Design-Programs/pict_6.png
+[empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
+[place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
