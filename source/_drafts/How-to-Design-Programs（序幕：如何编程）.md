@@ -283,7 +283,26 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 
 现在，我们已经准备写程序来让火箭飞起来了。
 
+---
 
+## 输入与输出
+
+到目前位置你写的程序都是很无聊的，你写下一个表达式或者几个表达式；点击RUN；看到结果。如果你再点击一次RUN，你会看到完全一样的结果，实际上，你可以随时随地点击RUN然后相同的结果会被展示出来。简而言之，你的程序就像是一个在计算的袖珍计算器一样，除了计算的数据可以是所有类型的数据而不仅仅是数字。
+
+这是好消息也是坏消息，是好消息是因为程序设计以及计算就应该是用计算器的自然推广。说它是坏消息是因为程序设计的目的是处理大量的数据然后得到大量不同的结果，且或多或少会有相同的计算。（它也应该能够快速地计算出这些结果，至少是比我们快的）那就是说，在你知道如何进行程序设计之前你需要学习更多。然而你并不需要担心：你拥有的关于数字、字符串、布尔值以及图片的运算的知识已经几乎让你能够编写一个创造电影的程序了，而不仅仅是那些傻傻的在某处显示“hello world”的程序了。而这就是我们接下来要进行的内容。
+
+以防你不知道，一个电影就是一系列图片快速且按顺序地展示。如果你的代数老师已经知道了你上一小节看的关于“图像的运算”的知识，你就可以用代数来创建一个电影而不是无趣的数字序列。好了，下面就是这样的一个表格：
+
+    x = 1   2   3   4   5   6   7   8   9   10
+    y = 1   4   9   16  25  36  49  64  81  ?
+
+你的老师现在会叫你填补上面的空缺处，就是将“?”的地方换成一个数字
+
+事实证明，做一个视频比完成一个像上面那样的表要复杂多了。实际上，所有的东西都是跟这个表有关的。
+
+![figure1][figure1]
+
+具体来说，你的老师会叫你来把第四、第五幅图画出来以及之后的1273张图，因为视频就是一大堆的图，每一秒钟就需要20到30张图，因此你需要1200张图或者1800张图才能制作一分钟的电影。
 
 [rocket]:     /images/How-to-Design-Programs/rocket.png
 [red-circle]: /images/How-to-Design-Programs/pict_2.png
@@ -291,5 +310,6 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 [overlay-picture]: /images/How-to-Design-Programs/pict_4.png
 [revert-overlay]: /images/How-to-Design-Programs/pict_5.png
 [scene]: /images/How-to-Design-Programs/pict_6.png
+[figure1]: /images/How-to-Design-Programs/pict_7.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
