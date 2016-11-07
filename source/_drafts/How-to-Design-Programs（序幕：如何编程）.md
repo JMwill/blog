@@ -304,6 +304,59 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 
 具体来说，你的老师会叫你来把第四、第五幅图画出来以及之后的1273张图，因为视频就是一大堆的图，每一秒钟就需要20到30张图，因此你需要1200张图或者1800张图才能制作一分钟的电影。
 
+你也许能回想起来，你的老师不仅会要一些序列中的第四或第五张，还可能会要求按一个给定的x找到序列中的特定项。在一个数值事例中，一个老师想好看到的是这样的结果：
+
+![figure2][figure2]
+
+如果你插入数值1，2,3直到x，然后得到数值1,4,9直到y，就像之前的表格上看到的那样。对于图片的序列而言，你可以认为是下面这样：
+
+    y = the image that contains a dot x2 pixels below the top.
+
+关键是这一行不仅仅是表达式，也可以是函数。
+
+乍一看，函数就像是表达式，总是有一个y在左边，紧跟着一个等号，然后是一个表达式。然而他们不是一个表达式。那些你在学校看到的关于函数的功能符号完全是误导人的。因此在DrRacket中，你写的函数有些不同。
+
+    (define (y x) (* x x))
+
+上面的[define][define]的意思是说“认为y是一个函数”，就像一个表达式，计算一个值。而一个函数的值依赖于一些称作输入的值，我们用`(x y)`来表示。由于我们不知道输入是什么，我们用一个自定义的名称来代表输入的值。按照数学上的传统，这里我们用x来协助表示未知输入；但是不就，我们就应该用各种名称了。
+
+第二部分表示你必须要提供一个数字（在这里是x），来为y定义一个特殊值。当你这样做的时候，DrRacket会替换x的值到关联的函数的表达式中。在这里表达式是`(* x x)`。一旦x被替换为一个值，比如说1，DrRacket就能计算这个表达式的值，也叫作函数的输出
+
+点击RUN会看到没有任何事情发生。在互动区域上没有展示任何东西。在DrRacket上没有任何地方有改变。就好像你没有完成任何东西一样。但是你确实完成了一些东西，实际上你定义了一个函数并通知DrRacket关于它的存在。事实上，下面的函数已经准备好为你所用了，输入：
+
+    (y 1)
+
+在互动区域的提示符处就能看到出现一个1作为反馈。`(y 1)`在DrRacket调用了一个函数应用。试下：
+
+    (y 2)
+
+然后看到一个4被输出。当然，你可以在定义区域输入下面所有的表达式然后点击RUN：
+
+    (define (y x) (* x x))
+    (y 1)
+    (y 2)
+    (y 3)
+    (y 4)
+    (y 5)
+
+在响应中，DrRacket会展示：1 4 9 16 25，就是表格中的数字。现在来确定确实的条目。
+
+对你而言所有的这些东西意味着函数提供了相当经济实用的方式来用一个表达式去计算大量有趣的值。实际上，程序就是一个函数，一旦你深入理解了一个函数，你就几乎知道了所有关于程序的东西。考虑到它们的重要性，让我们再次概括一下目前我们知道的关于函数的所有东西：
+
+- 第一，
+
+    (define (FunctionName InputName) BodyExpression)
+
+你已经知道了，上面是一个函数的定义，因为它以一个“[define][define]”关键词开头。它基本上由三部分组成：两个名称跟一个表达式。第一个名称是函数名，在你想要应用函数的时候你需要用到它。第二个名称叫做参数，代表函数的输入，它是未知的，直到你应用函数的时候才能确定。而表达式，也就是函数体，对函数的特定输入进行计算并输出。
+
+- 第二，
+
+    (FunctionName ArgumentExpression)
+
+这是一个函数的应用例子，第一部分告诉DrRacket你希望用哪一个函数，第二部分是你希望应用的函数的输入值。如果你已经看过Windows或者Mac的手册，它可能会告诉你说这个表达式“启动了”被称为FunctionName的“程序”而它会去处理作为输入的ArgumentExpression。就像所有的表达式那样，后者可能是一段纯粹的数据或者是更深嵌套的表达式。
+
+函数还能够以数字以外的数据作为输入，同时也能输出所有类型的数据。
+
 [rocket]:     /images/How-to-Design-Programs/rocket.png
 [red-circle]: /images/How-to-Design-Programs/pict_2.png
 [blue-rectangle]: /images/How-to-Design-Programs/pict_3.png
@@ -311,5 +364,7 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 [revert-overlay]: /images/How-to-Design-Programs/pict_5.png
 [scene]: /images/How-to-Design-Programs/pict_6.png
 [figure1]: /images/How-to-Design-Programs/pict_7.png
+[figure2]: /images/How-to-Design-Programs/pict_8.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
+[define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
