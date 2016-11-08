@@ -405,6 +405,93 @@ DrRacket生产出一个空心的矩形，也叫作场景。你可以用[place-im
 
 ## 计算的多种方法
 
+当你运行前一小节的picture-of-rocket程序时，那火箭最终消失在底部。这看起来是十分愚蠢的，火箭在老科幻电影里面是不会沉入地下的；它们会优雅地落在底部，影片应该在这里就结束掉。
+
+这个思想暗示计算过程应该根据不同的情况而变化。在我们的例子中，picture-of-rocket程序应该在火箭还在飞行的时候按照“原样”运行。然而，当火箭底部触及到画板的底部时，程序应该停止让火箭下沉得更深。
+
+在某种意义上讲，这个思想对你而言应该是新的。甚至你的数学老师也会定义一个区分不同的情况的函数。
+
+![figure7][figure7]
+
+sign函数对输入进行三种区分：大于零，等于零，小于零。根据输入得到的结果分别为：+1，0，-1。
+
+你可以在DrRacket中用[cond][cond]条件表达式来毫不费力地定义一个这样的函数
+
+```
+(define (sign x)
+    (cond
+        [(> x 0) 1]
+        [(= x 0) 0]
+        [(< x 0) -1]))
+```
+
+在你点击RUN后，你就可以跟sign函数互动，就像跟其他函数一样：
+
+```
+> (sign 10)
+1
+> (sign -5)
+-1
+> (sign 0)
+0
+```
+
+一般来说，一个条件表达式是有一个模板的
+
+```
+(cond
+  [ConditionExpression1 ResultExpression1]
+  [ConditionExpression2 ResultExpression2]
+  ...
+  [ConditionExpressionN ResultExpressionN])
+```
+
+也就是说，一个[cond][cond]条件表达式包含多行需要的条件行。每一行含有两个表达式：左边的通常叫做条件，右边的叫做结果；偶尔我们也会用问题与解答来表示。要运行一个[cond][cond]表达式，DrRacket会先运行第一个条件表达式，**ConditionExpression1**。如果它产生的值为`#true`，DrRacket用**ResultExpression1**来替代cond表达式，
+运行这个替代后的表达式然后用返回的值作为整个条件表达式的值。如果运行**ResultExpression1**返回的结果是`#false`，DrRacket放弃第一个条件行然后从新开始。如果所有的条件表达式运行结果都为`#flase`，DrRacket返回一个错误信号。
+
+有了这些知识，现在你能修改课程里面的仿真程序。目标是不要让火箭下降到100乘60的场景的地面上。由于picture-of-rocket函数需要比对场景的高度来决定在哪放置火箭，只需要一个简单的跟给定的最大高度进行对比的测试就可以了。
+
+看图五来修正函数的定义。定义名为picture-of-rocket.v2来区分两个版本。使用不同的名字，能够允许我们在互动区域内同时使用这两个函数以及来比较结果。这里是原来的程序的运行结果：
+
+![figure8][figure8]
+
+这里是第二个结果
+
+![figure9][figure9]
+
+无论你给picture-of-rocket.v2什么数字，如果这个数字超出100，你都会得到一个一样的场景，特别地，当你运行
+
+`> (animate picture-of-rocket.v2)`
+
+火箭在停止之前会下沉到地面的一半。
+
+![figure10][figure10]
+
+将火箭着陆到这么远的地方是很丑的。那么接下来，你也知道如何修复程序的这个方面（的错误）了。就像你看到的那样，BSL知道关于图片的运算。当[place-image][place-image]添加一个图片到场景中时，它会用图片的中心点来代表整个图片，即使图片具有非常大的高度以及非常大的宽度。你可能还记得，你可以用[image-height][image-height]来测量图片的高度，这个函数在这里显得很方便，因为你真的想要让火箭飞起来，直到它的底部触及地面。
+
+将（需要的）一个个地组合在一起，现在你可以弄明白下面的
+
+![figure11][figure11]
+
+才是你想要的正确的火箭停靠距离。你可以通过直接跟程序互动来明白这些东西。或者你也可以在互动区域直接用你的图片运算进行实验。
+
+这里是第一个尝试：
+
+![figure12][figure12]
+
+现在将上面的的程序的第三个参数换成：
+
+![figure13][figure13]
+
+停一下，并进行实验，哪一个结果你更喜欢？
+
+![figure14][figure14]
+
+当你跟着这些来想并进行实验的时候，以最终能够得到图六中的程序。给定一些代表火箭高度的数字，它首先测试火箭的底部高度是否在地面上。如果是，它将火箭放到跟之前一样的位置上，如果不是，它将这张火箭图片进行移动知道它的底部接触到地面。
+
+---
+
+## 一个程序，多个定义
 
 
 
@@ -420,7 +507,17 @@ DrRacket生产出一个空心的矩形，也叫作场景。你可以用[place-im
 [figure4]: /images/How-to-Design-Programs/pict_10.png
 [figure5]: /images/How-to-Design-Programs/pict_11.png
 [figure6]: /images/How-to-Design-Programs/pict_12.png
+[figure7]: /images/How-to-Design-Programs/pict_13.png
+[figure8]: /images/How-to-Design-Programs/pict_14.png
+[figure9]: /images/How-to-Design-Programs/pict_15.png
+[figure10]: /images/How-to-Design-Programs/pict_16.png
+[figure11]: /images/How-to-Design-Programs/pict_17.png
+[figure12]: /images/How-to-Design-Programs/pict_18.png
+[figure13]: /images/How-to-Design-Programs/pict_19.png
+[figure14]: /images/How-to-Design-Programs/pict_20.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
 [define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
 [animate]: http://docs.racket-lang.org/teachpack/2htdpuniverse.html#%28def._%28%28lib._2htdp%2Funiverse..rkt%29._animate%29%29
+[cond]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29
+[image-height]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._image-height%29%29
