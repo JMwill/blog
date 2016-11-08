@@ -355,7 +355,39 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 
 这是一个函数的应用例子，第一部分告诉DrRacket你希望用哪一个函数，第二部分是你希望应用的函数的输入值。如果你已经看过Windows或者Mac的手册，它可能会告诉你说这个表达式“启动了”被称为FunctionName的“程序”而它会去处理作为输入的ArgumentExpression。就像所有的表达式那样，后者可能是一段纯粹的数据或者是更深嵌套的表达式。
 
-函数还能够以数字以外的数据作为输入，同时也能输出所有类型的数据。
+函数还能够以数字以外的数据作为输入，同时也能输出所有类型的数据。我们的下一个任务是用函数创建一个来模拟第二个表格（就是那个带有颜色点的图片那个），就像第一个函数模拟的数值表。由于从一个表达式中创建图像不像你从高中中知道的东西，所以让我们先从简单的地方开始，你还记得[empty-scene][empty-scene]吗？我们在上一小节简短地提及到它。当你向互动区域输入下面的表达式：
+
+![figure3][figure3]
+
+DrRacket生产出一个空心的矩形，也叫作场景。你可以用[place-image][place-image]来添加一张图片到场景中，
+
+![figure4][figure4]
+
+将这个火箭想象成一个物体，就像是从你上面的数学班中提到的那个表格里面的点一样。区别是火箭更为有趣。
+
+接下来，你需要让火箭降落，就像是上面表格中的点一样。在前一节中，你知道了如何通过[place-image][place-image]提供的功能来增加y轴从而实现这个效果。
+
+![figure5][figure5]
+
+现在所有需要的只是简易地生产很多的场景，并将所有的场景按照顺序展示它们。
+
+![figure6][figure6]
+
+当然，第一个目标可以用一个函数实现；具体看图4。是的，这就是一个函数定义。在这里没有用y，它用了picture-of-rocket作为函数名，一个可以马上告诉你函数会输出什么的名称：一个有着火箭的图片。作为x的替代，这里用了height作为参数名，一个暗示是自身是数字，并告诉函数如何摆放火箭的名称。函数体就是像我们刚刚进行实验的一系列表达式，除了它用height来替代了数字。我们能够十分容易地用函数来创建这样的图片：
+
+    (picture-of-rocket 0)
+    (picture-of-rocket 10)
+    (picture-of-rocket 20)
+    (picture-of-rocket 30)
+
+在DrRacket的定义区域或者互动区域尝试这些程序；都能创建预期的场景。
+
+第二个目标要求了解一个额外的在2htdp/universe函数库中的原始操作符：[animate][animate]。然后点击RUN以及输入下面的表达式：
+
+`> (animate picture-of-rocket)`
+
+停下来并注意到，参数表达式是一个函数，现在先不要担心用函数作为参数的问题；它能在[animate][animate]中好好工作，但是目前先不要急着尝试去定义像[animate][animate]这样的函数先。
+
 
 [rocket]:     /images/How-to-Design-Programs/rocket.png
 [red-circle]: /images/How-to-Design-Programs/pict_2.png
@@ -365,6 +397,11 @@ DrRacket会回显一个图片。跟其他编程语言相比较，BSL能理解图
 [scene]: /images/How-to-Design-Programs/pict_6.png
 [figure1]: /images/How-to-Design-Programs/pict_7.png
 [figure2]: /images/How-to-Design-Programs/pict_8.png
+[figure3]: /images/How-to-Design-Programs/pict_9.png
+[figure4]: /images/How-to-Design-Programs/pict_10.png
+[figure5]: /images/How-to-Design-Programs/pict_11.png
+[figure6]: /images/How-to-Design-Programs/pict_12.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
 [define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
+[animate]: http://docs.racket-lang.org/teachpack/2htdpuniverse.html#%28def._%28%28lib._2htdp%2Funiverse..rkt%29._animate%29%29
