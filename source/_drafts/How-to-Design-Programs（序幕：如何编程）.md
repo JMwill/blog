@@ -550,6 +550,29 @@ sign函数对输入进行三种区分：大于零，等于零，小于零。根�
 
 虽然常量之间的定义顺序会带来影响，但是对于函数定义来说常量定义的顺序并没有影响。实际上，如果你的程序由许多函数定义组成，它们之间的顺序也没有影响，虽然最好还是将所有的常量先声明，然后以重要性来进行降序排列来定义函数比较好。当你开始编写你自己的具有多个定义的程序时，你会知道为什么这些顺序是有必要的。
 
+![figure16][figure16]
+
+一旦你清除掉了所有重复的代码，你会得到图8所示的程序。它包含了一个函数定义，以及5个常量定义。除了火箭的中心的位置，这些常量定义也会导出照片本身，以及创建空场景。
+
+在你继续看下去之前，思考一下的对你的程序接下来的改变。
+
+- 你会怎样改变程序让它创建一个200乘400的空白场景。
+- 你会怎样改变程序让它能够描述一个绿色的UFO（未知飞行物）的着陆？画一个UFO是很容易的：
+
+```
+(overlay (circle 10 "solid" "green")
+    (rectangle 40 4 "solid" "green"))
+```
+
+- 你会怎样改变程序让背景永远是蓝色？
+- 你会怎样修改程序让火箭停在一个比场景底部要高10像素的平岩床？别忘记也要修改风景哦。
+
+行动比单纯的思考要好，这是学习的唯一方法，所以不要让我们停住你的脚步，放手干吧。
+
+再看一下picture-of-rocket.v5的**魔法数字**。既然我们已经将所有的重复代码都已经清楚掉了，但还是有一个数字出现在函数的定义中。在编程的世界里，这些数字叫做魔法数字，但没有任何人喜欢它们。在你知道原因之前，你就已经忘记这个数字代表的角色，以及什么样的改变是合法的。最好的做法是给这些数字一个定义。
+
+实际上在这里我们知道50是对于火箭x轴坐标的选取。即使50看起来不想一个表达式，但它真的是一个重复的表达式。因此我们有两个理由来消除函数中的50，这些工作我们留给你来进行。
+
 [rocket]:     /images/How-to-Design-Programs/rocket.png
 [red-circle]: /images/How-to-Design-Programs/pict_2.png
 [blue-rectangle]: /images/How-to-Design-Programs/pict_3.png
@@ -571,6 +594,7 @@ sign函数对输入进行三种区分：大于零，等于零，小于零。根�
 [figure13]: /images/How-to-Design-Programs/pict_19.png
 [figure14]: /images/How-to-Design-Programs/pict_20.png
 [figure15]: /images/How-to-Design-Programs/pict_21.png
+[figure16]: /images/How-to-Design-Programs/pict_22.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
 [define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
