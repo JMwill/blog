@@ -573,6 +573,50 @@ sign函数对输入进行三种区分：大于零，等于零，小于零。根�
 
 实际上在这里我们知道50是对于火箭x轴坐标的选取。即使50看起来不想一个表达式，但它真的是一个重复的表达式。因此我们有两个理由来消除函数中的50，这些工作我们留给你来进行。
 
+---
+
+## 再多一个定义
+
+回想一下，[animate][animate]函数实际上在一开始被调用的时候就将它的时钟周期计数值应用到传入的函数内。就是说，picture-of-rocket的参数实际上并不是高度，而是时间。我们以前定义的picture-of-rocket为函数的参数名定义了一个错误的名称，它应该用t作为time的简称而不是h作为height的简称：
+
+```
+(define (picture-of-rocket t)
+  (cond
+    [(<= t ROCKET-CENTER-TO-TOP)
+     (place-image ROCKET X t MTSCN)]
+    [(> t ROCKET-CENTER-TO-TOP)
+     (place-image ROCKET X ROCKET-CENTER-TO-TOP
+                  MTSCN)]))
+```
+
+而这个小小的改变，立马程序定义澄清了是用时间作为作为距离的替代。这是多么坏的主意。
+
+即使你从来没有上过物理课程，你也知道时间并不是距离。因此，不知何故我们的程序却意外地能够工作。然而，不用担心的是，这些都很容易修复。你需要知道的所有东西知识一点点火箭科学，像我们会将其称之为物理。
+
+物理?!?好吧，可能你已经忘记你在课堂上所学的东西。或者可能因为你太年轻或者温柔所以从未参加过物理课。但是不必担心，好的程序员成天都会遇到这样的问题，因为他们需要帮助在音乐，经济，摄影，物理，护理和各种其他学科上有问题的人。很明显，没有一个程序员会知道所有的东西。因此他们查找他们需要知道的东西。或者他们跟正确的人谈话。如果你跟一个物理学家聊天，你会发现行驶距离跟时间成正比：
+
+![figure17][figure17]
+
+也就是说，如果一个物体的速度是v，然后这个物体就会在t秒内移动了d英里（或者米或者像素或者其他什么）
+
+当然，一个老师应当给你展示一个合适的函数定义：
+
+![figure18][figure18]
+
+因为这样能够立马告知每一个人d的计算依赖于时间t以及速度常量v。一个程序员会更进一步来为这些缩写的单字母用有意义的名称。
+
+```
+ (define V 3)
+ (define (distance t)
+    (* V t))
+```
+
+这个代码片段包含有两个定义：一个用于计算具有固定移动速度物体的移动距离的函数定义，以及一个常量V用于定义速度。
+
+你可能会想知道为什么这里的V是3，这个并没有什么特别的理由。我们认为一个时钟周期3像素的速率是较好的，你可能不这么认为。跟这些数字玩耍一下然后看下动画发生了什么变化。
+
+![figure19][figure19]
+
 [rocket]:     /images/How-to-Design-Programs/rocket.png
 [red-circle]: /images/How-to-Design-Programs/pict_2.png
 [blue-rectangle]: /images/How-to-Design-Programs/pict_3.png
@@ -595,6 +639,9 @@ sign函数对输入进行三种区分：大于零，等于零，小于零。根�
 [figure14]: /images/How-to-Design-Programs/pict_20.png
 [figure15]: /images/How-to-Design-Programs/pict_21.png
 [figure16]: /images/How-to-Design-Programs/pict_22.png
+[figure17]: /images/How-to-Design-Programs/pict_23.png
+[figure18]: /images/How-to-Design-Programs/pict_24.png
+[figure19]: /images/How-to-Design-Programs/pict_25.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
 [define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
