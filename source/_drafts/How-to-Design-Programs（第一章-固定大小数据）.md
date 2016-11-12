@@ -57,7 +57,26 @@ tags:
 
 ---
 
+## 1.1 数字的算术
 
+大多数人在他们听到“算术”，“操作数字”时认为“数字”以及“操作数字”就是意味着加上两个数字来产生第三个；从一个数字里面减去另外一个；确定两个数的最大公约数；以及更多其他这些东西。如果我们不过于以字面上的意思来理解算术，我们可能会将角度的正弦值，一个实数四舍五入为最接近的整数等等也包括在内。
+
+BSL语言支持数字与算术。就像在序幕里讨论的那样，一个算术操作如+号像下面这样用：
+
+`(+ 3 4)`
+
+也就是说以前缀符的形式来用。接下来是一些我们的语言提供的对数字进行的操作：+, -, *, /, abs, add1, ceiling, denominator, exact->inexact, expt, floor, gcd, log, max, numerator, quotient, random, remainder, sqr, 以及tan。我们选择以我们的方式来排列字母表，只是为了展示各种类型的操作，（希望你）探索他们计算什么，然后找出还有多少这些操作。
+
+如果你需要一个你在数学课上知道的关于数的操作，恰巧BSL也知道这个操作，猜下它的名字以及在互动区域进行一下实验。假如说你需要计算一个角度的sin值；试下
+
+```
+> (sin 0)
+0
+```
+
+然后之后就开心地使用它。或者看下帮助平台。你会发现那里为了某些操作，BSL也能够识别一些广泛使用的数的名称，例如：[pi][pi]以及[e][e]
 
 
 [prologue]: http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
+[pi]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._pi%29%29
+[e]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._e%29%29
