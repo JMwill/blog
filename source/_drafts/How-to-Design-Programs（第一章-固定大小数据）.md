@@ -76,7 +76,14 @@ BSL语言支持数字与算术。就像在序幕里讨论的那样，一个算�
 
 然后之后就开心地使用它。或者看下帮助平台。你会发现那里为了某些操作，BSL也能够识别一些广泛使用的数的名称，例如：[pi][pi]以及[e][e]
 
+当谈及到数字时，BSL程序可能会用到自然数，整数，有理数，实数以及复数。我们假设你已经听过除了最后一个以外的所有类型的数。最后一个可能在你的高中就已经提到过。如果没有，不要担心；即使复数对所有类型的计算都是有用的，初学者还没有必要了解它。
+
+一个真正重要的区别是区分数的精度。现在，理解BSL是如何区分精确数字以及非精确数字是很重要的。当它计算精确数字时，BSL会尽可能地保留它的精度。例如，`(/ 4 6)`产出精确分数`2/3`，DrRacket可以将其渲染为恰当的分数，不恰当的分数或者是一个混合十进制数。可以用你的鼠标找到将分数表示改为十进制表示的菜单项。
+
+一些BSL's数字操作无法得出准确的结果。例如，使用[sqrt][sqrt]操作符对2进行计算得到一个无理数，这数字无法用有限位的数进行表达。因为，计算机位数是有限的而BSL必须要以某种方式将这些数字装入计算机，它选择了一个近似值：1.4142135623730951。就像在序幕中提到的那样，#i前缀提醒程序员这种精度缺失的情况。而大多数编程语言选择以这种方式减少精度，但是却很少进行提醒甚至更少会去警告程序员。
+
 
 [prologue]: http://www.ccs.neu.edu/home/matthias/HtDP2e/part_prologue.html
 [pi]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._pi%29%29
 [e]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._e%29%29
+[sqrt]: http://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._sqrt%29%29
