@@ -14,7 +14,7 @@ tags:
 
 点击运行，然后结果2会显示在下面那一部分。
 
-![图3：初识DrRacket](/images/How-to-Design-Programs/drracket-plain.png)
+![图3：初识DrRacket](/images/How-to-Design-Programs/Chapter-Prologue/drracket-plain.png)
 
 这是一个多么简单的程序。你讲DrRacket当做小学生一样问问题，然后DrRacket就为你计算结果。你也可以让DrRacket一次性计算几个问题：
 
@@ -653,31 +653,31 @@ sign函数对输入进行三种区分：大于零，等于零，小于零。根�
 
 **注意这本书不涉及的是什么** 很多介绍编程的书籍含有大量关于作者最喜欢的编程应用学科的材料：难题，数学，物理，音乐，以及其他。在某种程度上，包含有这些材料是自然的，因为编程显然在这些领域都是有用的。再然后，这些材料会分散正确的编程目的，通常也无法将重要的内容跟次要的内容挑明分开。因此，这本书专注于编程以及解决问题，还有计算机科学可以在这方面教导你些什么。我们已经尽最大努力来减少使用其他领域的知识；我们需要道歉的是，在那些小数的几个场合里内容会有些过于深入。
 
-[rocket]:     /images/How-to-Design-Programs/rocket.png
-[red-circle]: /images/How-to-Design-Programs/pict_2.png
-[blue-rectangle]: /images/How-to-Design-Programs/pict_3.png
-[overlay-picture]: /images/How-to-Design-Programs/pict_4.png
-[revert-overlay]: /images/How-to-Design-Programs/pict_5.png
-[scene]: /images/How-to-Design-Programs/pict_6.png
-[figure1]: /images/How-to-Design-Programs/pict_7.png
-[figure2]: /images/How-to-Design-Programs/pict_8.png
-[figure3]: /images/How-to-Design-Programs/pict_9.png
-[figure4]: /images/How-to-Design-Programs/pict_10.png
-[figure5]: /images/How-to-Design-Programs/pict_11.png
-[figure6]: /images/How-to-Design-Programs/pict_12.png
-[figure7]: /images/How-to-Design-Programs/pict_13.png
-[figure8]: /images/How-to-Design-Programs/pict_14.png
-[figure9]: /images/How-to-Design-Programs/pict_15.png
-[figure10]: /images/How-to-Design-Programs/pict_16.png
-[figure11]: /images/How-to-Design-Programs/pict_17.png
-[figure12]: /images/How-to-Design-Programs/pict_18.png
-[figure13]: /images/How-to-Design-Programs/pict_19.png
-[figure14]: /images/How-to-Design-Programs/pict_20.png
-[figure15]: /images/How-to-Design-Programs/pict_21.png
-[figure16]: /images/How-to-Design-Programs/pict_22.png
-[figure17]: /images/How-to-Design-Programs/pict_23.png
-[figure18]: /images/How-to-Design-Programs/pict_24.png
-[figure19]: /images/How-to-Design-Programs/pict_25.png
+[rocket]:     /images/How-to-Design-Programs/Chapter-Prologue/rocket.png
+[red-circle]: /images/How-to-Design-Programs/Chapter-Prologue/pict_2.png
+[blue-rectangle]: /images/How-to-Design-Programs/Chapter-Prologue/pict_3.png
+[overlay-picture]: /images/How-to-Design-Programs/Chapter-Prologue/pict_4.png
+[revert-overlay]: /images/How-to-Design-Programs/Chapter-Prologue/pict_5.png
+[scene]: /images/How-to-Design-Programs/Chapter-Prologue/pict_6.png
+[figure1]: /images/How-to-Design-Programs/Chapter-Prologue/pict_7.png
+[figure2]: /images/How-to-Design-Programs/Chapter-Prologue/pict_8.png
+[figure3]: /images/How-to-Design-Programs/Chapter-Prologue/pict_9.png
+[figure4]: /images/How-to-Design-Programs/Chapter-Prologue/pict_10.png
+[figure5]: /images/How-to-Design-Programs/Chapter-Prologue/pict_11.png
+[figure6]: /images/How-to-Design-Programs/Chapter-Prologue/pict_12.png
+[figure7]: /images/How-to-Design-Programs/Chapter-Prologue/pict_13.png
+[figure8]: /images/How-to-Design-Programs/Chapter-Prologue/pict_14.png
+[figure9]: /images/How-to-Design-Programs/Chapter-Prologue/pict_15.png
+[figure10]: /images/How-to-Design-Programs/Chapter-Prologue/pict_16.png
+[figure11]: /images/How-to-Design-Programs/Chapter-Prologue/pict_17.png
+[figure12]: /images/How-to-Design-Programs/Chapter-Prologue/pict_18.png
+[figure13]: /images/How-to-Design-Programs/Chapter-Prologue/pict_19.png
+[figure14]: /images/How-to-Design-Programs/Chapter-Prologue/pict_20.png
+[figure15]: /images/How-to-Design-Programs/Chapter-Prologue/pict_21.png
+[figure16]: /images/How-to-Design-Programs/Chapter-Prologue/pict_22.png
+[figure17]: /images/How-to-Design-Programs/Chapter-Prologue/pict_23.png
+[figure18]: /images/How-to-Design-Programs/Chapter-Prologue/pict_24.png
+[figure19]: /images/How-to-Design-Programs/Chapter-Prologue/pict_25.png
 [empty-scene]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._empty-scene%29%29
 [place-image]: http://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29
 [define]:      http://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define%29%29
