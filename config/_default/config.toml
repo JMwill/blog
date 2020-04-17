@@ -43,4 +43,4 @@ tag = "tags"
 series = "series"
 
 [permalinks]
-post = "/:year/:month/:day/:slug/"
+posts = "/:year/:month/:day/:slug/"
