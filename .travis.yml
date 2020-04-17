@@ -1,6 +1,6 @@
-# language: go
-# go:
-#   - master
+language: go
+go:
+  - master
 
 dist: xenial
    addons:
