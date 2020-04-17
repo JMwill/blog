@@ -3,11 +3,9 @@ go:
   - master
 
 dist: xenial
-   addons:
-     snaps:
-       - hugo
-
-sudo: required
+addons:
+  snaps:
+    - hugo
 
 # Travis-CI Caching
 cache:
