@@ -8,7 +8,7 @@ header:
     title:
       - Will
     subtitle:
-      - Experience without learning is better than learning without experience.
+      - Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric.
       - — Bertrand Russell, Philosopher
     titleColor: 
     titleShadow: true

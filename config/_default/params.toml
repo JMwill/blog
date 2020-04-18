@@ -21,7 +21,8 @@ hideSingleContentsWhenJSDisabled = false
 homeHeaderType = "text" # text, img, slide
 
 # menu
-showMobileMenuTerms = ["tags", "categories", "series"]
+# showMobileMenuTerms = ["tags", "categories", "series"]
+showMobileMenuTerms = ["tags"]
 
 # navbar
 enableThemeChange = true # site color theme
