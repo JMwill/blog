@@ -4,81 +4,82 @@
 #+STARTUP: fninline logdone
 #+hugo_auto_set_lastmod: t
 
-* DONE 始于 2020 的 Hugo 迁移
-  CLOSED: [2020-04-19 Sun 02:09]
-:PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug 始于-2020-的-hugo-迁移
-:EXPORT_FILE_NAME: 2020-04-19-始于-2020-的-hugo-迁移
-:END:
+* Posts
+** DONE 始于 2020 的 Hugo 迁移
+   CLOSED: [2020-04-19 Sun 02:09]
+   :PROPERTIES:
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug 始于-2020-的-hugo-迁移
+   :EXPORT_FILE_NAME: 2020-04-19-始于-2020-的-hugo-迁移
+   :END:
 
-到今天为止，已经辞职一年了。在这一年的时间里面，只做了一件事情，虽然最后的结果不是自己想要的，但也算是了了心愿。借着博客的迁移，再次重新出发，努力追赶上一年时间里面落下的东西，巩固已有的能力，顺便在这里记录一下迁移过程。
+ 到今天为止，已经辞职一年了。在这一年的时间里面，只做了一件事情，虽然最后的结果不是自己想要的，但也算是了了心愿。借着博客的迁移，再次重新出发，努力追赶上一年时间里面落下的东西，巩固已有的能力，顺便在这里记录一下迁移过程。
 
-** 为何选用 Hugo？
+*** 为何选用 Hugo？
 
-我的这个博客已经很久没有更新了，有很多理由可以说，但归根到底是觉得没有可以写的东西。以前每看一本书，或者了解到有新的技术时会做一些笔记，但不会把它写到博客上，然后时间久了之后就忘了这个博客的存在了。最近一年的时间里所做的事情告一段落之后，主动了解一下程序员常用的编辑器： [[https://www.gnu.org/software/emacs/][Emacs]] ，随后又了解到备受赞誉的： [[https://orgmode.org/][Org-mode]] 。使用 Emacs 的人几乎没有不使用 Org 的，甚至有些是因为 Org 才转用 Emacs 编辑器的。
+ 我的这个博客已经很久没有更新了，有很多理由可以说，但归根到底是觉得没有可以写的东西。以前每看一本书，或者了解到有新的技术时会做一些笔记，但不会把它写到博客上，然后时间久了之后就忘了这个博客的存在了。最近一年的时间里所做的事情告一段落之后，主动了解一下程序员常用的编辑器： [[https://www.gnu.org/software/emacs/][Emacs]] ，随后又了解到备受赞誉的： [[https://orgmode.org/][Org-mode]] 。使用 Emacs 的人几乎没有不使用 Org 的，甚至有些是因为 Org 才转用 Emacs 编辑器的。
 
-因为 Org 的功能强大，在尝试使用后我就决定以后常用 Emacs 以及 Org ，有了这个想法而且在网络上浏览文章时碰到 [[https://gohugo.io/][Hugo]] 这个静态博客构建系统，就想起来我自己也有一个博客，故此就顺着这个机会把博客迁移到 Hugo 来构建，结合 [[https://ox-hugo.scripter.co/][ox-hugo]] 来学习并体验 Org 的强大功能。
+ 因为 Org 的功能强大，在尝试使用后我就决定以后常用 Emacs 以及 Org ，有了这个想法而且在网络上浏览文章时碰到 [[https://gohugo.io/][Hugo]] 这个静态博客构建系统，就想起来我自己也有一个博客，故此就顺着这个机会把博客迁移到 Hugo 来构建，结合 [[https://ox-hugo.scripter.co/][ox-hugo]] 来学习并体验 Org 的强大功能。
 
-** 迁移
+*** 迁移
 
-整体迁移过程就比较简单，先把就博客包含的内容都转移到备份的文件夹
+ 整体迁移过程就比较简单，先把就博客包含的内容都转移到备份的文件夹
 
-#+BEGIN_SRC shell
-mv * ../backup
-hugo new site .
-#+END_SRC
+ #+BEGIN_SRC shell
+ mv * ../backup
+ hugo new site .
+ #+END_SRC
 
-新建完成后将原有的 Git 相关配置文件从 backup 中放回到项目下，因为旧博客使用的 Hexo 来构建，为了保证以前的文章路径不被破坏，或者如果你更喜欢 Hexo 类型的路径形式的话，需要在 config.toml 文件中加入配置：
+ 新建完成后将原有的 Git 相关配置文件从 backup 中放回到项目下，因为旧博客使用的 Hexo 来构建，为了保证以前的文章路径不被破坏，或者如果你更喜欢 Hexo 类型的路径形式的话，需要在 config.toml 文件中加入配置：
 
-#+BEGIN_SRC toml
-[permalinks]
-posts = "/:year/:month/:day/:slug/"
+ #+BEGIN_SRC toml
+ [permalinks]
+ posts = "/:year/:month/:day/:slug/"
 
-# 这里的 frontmatter 添加也可以，不添加也可以，只是修改 date 的默认行为改为从文件名处先获取
-[frontmatter]
-date = [":filename", ":default"]
-#+END_SRC
+ # 这里的 frontmatter 添加也可以，不添加也可以，只是修改 date 的默认行为改为从文件名处先获取
+ [frontmatter]
+ date = [":filename", ":default"]
+ #+END_SRC
 
-旧文章迁移过去时有些不兼容的地方需要修改，例如日期格式从 ~YYYY-MM-DD HH:MM~ 改为 ~YYYY-MM-DDTHH:MM:SS+08:00~ 这种带时区的时间格式，具体可以参考：
-《把博客生成工具从 Hexo 迁移到 Hugo — 配置与设置》[fn:1]
+ 旧文章迁移过去时有些不兼容的地方需要修改，例如日期格式从 ~YYYY-MM-DD HH:MM~ 改为 ~YYYY-MM-DDTHH:MM:SS+08:00~ 这种带时区的时间格式，具体可以参考：
+ 《把博客生成工具从 Hexo 迁移到 Hugo — 配置与设置》[fn:1]
 
-迁移过后，根据 Hugo 的新手入门测试一下效果，没问题就可以去主题站点选择一个喜爱的主题来替换，或者可以自己编写。
+ 迁移过后，根据 Hugo 的新手入门测试一下效果，没问题就可以去主题站点选择一个喜爱的主题来替换，或者可以自己编写。
 
-** 自动化
+*** 自动化
 
-迁移到 Hugo 并不复杂，完成对应配置后，需要修改一下构建的设置文件，原来是使用 Travis CI 来自动构建，本次迁移当然少不了修改配置。
+ 迁移到 Hugo 并不复杂，完成对应配置后，需要修改一下构建的设置文件，原来是使用 Travis CI 来自动构建，本次迁移当然少不了修改配置。
 
-#+BEGIN_SRC yaml
-language: go
-go:
-  - master
+ #+BEGIN_SRC yaml
+ language: go
+ go:
+   - master
 
-dist: xenial
-addons:
-  snaps:
-    - hugo
-#+END_SRC
+ dist: xenial
+ addons:
+   snaps:
+     - hugo
+ #+END_SRC
 
-将之前的语言从 Node.js 换为 Go，构建的系统默认是 Linux，因此指定一下为 xenial 发行版。最后指定用 snaps 来安装 Hugo。snaps 上的 Hugo 版本基本与最新版保持同步。避免使用 apt-get 等方式来手动安装，原因是 Travis CI 上的默认 Linux 上的 apt-get 安装的都是旧版 Hugo，没法正确构建，而网上很多在 Travis CI 上安装 Hugo 的方式都是自己从 Github 上拉 =*.deb= 来安装，个人觉得这种方式更为繁琐且需要复杂的正则来匹配提取准确路径，容易出错。
+ 将之前的语言从 Node.js 换为 Go，构建的系统默认是 Linux，因此指定一下为 xenial 发行版。最后指定用 snaps 来安装 Hugo。snaps 上的 Hugo 版本基本与最新版保持同步。避免使用 apt-get 等方式来手动安装，原因是 Travis CI 上的默认 Linux 上的 apt-get 安装的都是旧版 Hugo，没法正确构建，而网上很多在 Travis CI 上安装 Hugo 的方式都是自己从 Github 上拉 =*.deb= 来安装，个人觉得这种方式更为繁琐且需要复杂的正则来匹配提取准确路径，容易出错。
 
-#+BEGIN_SRC yaml
-before_script:
-  - rm -rf public 2> /dev/null
+ #+BEGIN_SRC yaml
+ before_script:
+   - rm -rf public 2> /dev/null
 
-script:
-  - hugo version
-  - hugo
-#+END_SRC
+ script:
+   - hugo version
+   - hugo
+ #+END_SRC
 
-之后就是在真正重新构建之前将以前构建出来的静态资源文件夹删除掉，然后再执行构建。
+ 之后就是在真正重新构建之前将以前构建出来的静态资源文件夹删除掉，然后再执行构建。
 
-余下的推送到 Github 上的命令则无需更改，因为两者都是用 public 作为静态资源构建的目标文件夹。没有弄过 Travis CI 的可以参考我的配置[fn:2]
+ 余下的推送到 Github 上的命令则无需更改，因为两者都是用 public 作为静态资源构建的目标文件夹。没有弄过 Travis CI 的可以参考我的配置[fn:2]
 
-** 结尾
+*** 结尾
 
-博客的迁移工作基本流程就是这样，后续还需要在 Emacs 上安装 ox-hugo，编写一些 org capture template，加上截图函数，添加评论系统到博客等工作，这些就慢慢来吧。
+ 博客的迁移工作基本流程就是这样，后续还需要在 Emacs 上安装 ox-hugo，编写一些 org capture template，加上截图函数，添加评论系统到博客等工作，这些就慢慢来吧。
 
-* Footnotes
+** Footnotes
 
 [fn:2] https://github.com/JMwill/blog/blob/master/.travis.yml
 [fn:1] https://jdhao.github.io/2018/10/10/hexo_to_hugo/
