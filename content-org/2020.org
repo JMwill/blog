@@ -83,3 +83,10 @@
 
 [fn:2] https://github.com/JMwill/blog/blob/master/.travis.yml
 [fn:1] https://jdhao.github.io/2018/10/10/hexo_to_hugo/
+** TODO WSL，Windows 与 Linux 的丝滑融合
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2020-04-22-wsl-windows-与-linux-的融合
+   :END:
+ 偶然的机会，需要使用 Windows 来进行开发，由于我平时主要使用 MacOS 与 Linux 开发所以在 Windows 上进行开发的时候也必不可少地需要使用命令行。一开始是只使用系统的 CMD 来执行任务，但是 Windows 下的命令行与 Linux 下的有诸多不同，使用起来束手束脚，十分不方便，即使是安装了 [[https://www.cygwin.com/][Cygwin]] 或者 [[https://cmder.net/][cmder]]，使用起来还是很别扭。
+
+总的来说，以上的两个工具日常开发是勉强够用的，毕竟就只是运行一下命令。但是，如果已经习惯 Linux 下顺畅的命令行使用体验，且想要在 Windows 上也能实现的话在以前来说是不可能的，不过随着 Windows 推出的 Windows Subsystem for Linux 简称：WSL 的功能后，你可以在 Windows 上将 Linux 作为一个应用一样打开使用
