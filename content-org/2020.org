@@ -1,6 +1,7 @@
+# -*- mode: Org; org-download-image-dir: "~/Personal/blog/static/ox-hugo"; org-download-heading-lvl: nil; eval: (org-content 2); -*-
 #+STARTUP: indent
 #+HUGO_BASE_DIR: ../
-#+HUGO_SECTION: posts
+#+HUGO_SECTION: ./posts
 #+OPTIONS: author:nil
 #+STARTUP: fninline logdone
 #+hugo_auto_set_lastmod: t
@@ -84,7 +85,8 @@
 
 [fn:2] https://github.com/JMwill/blog/blob/master/.travis.yml
 [fn:1] https://jdhao.github.io/2018/10/10/hexo_to_hugo/
-** TODO WSL，Windows 与 Linux 的丝滑融合
+** DONE WSL，Windows 与 Linux 的丝滑融合
+CLOSED: [2020-05-17 Sun 00:10]
    :PROPERTIES:
    :EXPORT_FILE_NAME: 2020-04-22-wsl-windows-与-linux-的融合
    :END:
@@ -124,7 +126,9 @@ Web 开发少不了使用这个热门编辑器，在 Windows 上安装完后，�
 
 **** 完善环境
 
-在 Linux 之类的环境上开发的时候，我比较喜欢用 [[http://zsh.sourceforge.net/][Zsh]] 结合 [[https://ohmyz.sh/][Oh My Zsh]]，不过安装完后，如果使用一些主题的话，需要面临字体不合适的问题。如果使用的主题需要的字体找不到的话此时打开的界面将会十分丑陋 //Todo: 待插入图片
+在 Linux 之类的环境上开发的时候，我比较喜欢用 [[http://zsh.sourceforge.net/][Zsh]] 结合 [[https://ohmyz.sh/][Oh My Zsh]]，不过安装完后，如果使用一些主题的话，需要面临字体不合适的问题。如果使用的主题需要的字体找不到的话此时打开的界面将会十分丑陋
+#+DOWNLOADED: https://s1.ax1x.com/2020/05/16/Yc5JLn.png @ 2020-05-16 21:20:36
+[[file:/blog/ox-hugo/Yc5JLn_2020-05-16_21-20-36.png]]
 
 想要解决这个问题可以遵照以下的步骤：
 
