@@ -144,3 +144,11 @@ Web 开发少不了使用这个热门编辑器，在 Windows 上安装完后，�
 
 *** 结尾
 上面就是这段时间使用 Windows 开发过程中总结下来的经验，期间自己的环境安装文件也出了许多问题，比如：[[https://stackoverflow.com/questions/44455001/how-to-change-pip3-command-to-be-pip][pip 的重命名]]，[[https://realpython.com/intro-to-pyenv/][pyenv 安装前依赖未确认]]等，都一并写在这里记录下来作为自己的[[https://wiki.mbalib.com/wiki/%25E7%25BB%2584%25E7%25BB%2587%25E8%25BF%2587%25E7%25A8%258B%25E8%25B5%2584%25E4%25BA%25A7][过程资产]]吧。
+
+*** 补充
+这里补充一下使用过程中遇到的问题，方便日后索引。
+
+**** Git 配置
+现今的开发工作基本离不开 Git 等版本管理库，使用 WSL 的过程中，由于公司内部禁止了 ssh 连接，使用 http 下载程序包时就需要输入对应内网的 Gitlab 平台账号密码。为了减少输入密码等工作，在翻找了资料之后找到了解决办法：[[https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage][信任凭证存储]]，通过存储凭证，能够在输入一次账号密码后即免除后续的重复输入，凭证的设置分为几个等级以及不同平台的处理，对于 WSL，如果无需与 Windows 系统共享的话，可以直接使用 store 选项，存储在文件中，否则则需要安装 Windows 平台对应需要的支持软件。
+
+对应地，安装了 Windows 软件后，WSL 内的 helper 配置路径就需要设置为 Windows 下的位置，形如： ~git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe "~ ，具体可参考[[https://zitseng.com/archives/19588][这篇文章]]。
