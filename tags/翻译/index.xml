@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>翻译 on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/%E7%BF%BB%E8%AF%91/</link>
+    <description>Recent content in 翻译 on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 29 Jun 2016 11:07:03 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>【译】生命是一场游戏，而这是一份攻略</title>
+        <link>https://jmwill.github.io/blog/2016/06/29/%E8%AF%91%E7%94%9F%E5%91%BD%E6%98%AF%E4%B8%80%E5%9C%BA%E6%B8%B8%E6%88%8F%E8%80%8C%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E6%94%BB%E7%95%A5/</link>
+        <pubDate>Wed, 29 Jun 2016 11:07:03 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Wed, 29 Jun 2016 11:07:03 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2016/06/29/%E8%AF%91%E7%94%9F%E5%91%BD%E6%98%AF%E4%B8%80%E5%9C%BA%E6%B8%B8%E6%88%8F%E8%80%8C%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E6%94%BB%E7%95%A5/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jmwill.github.io/blog/blog/images/2016/06/Cover-shallow-1024x626.png&#34; alt=&#34;img of press to start&#34; /&gt;&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>翻译</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

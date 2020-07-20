@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Django on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/django/</link>
+    <description>Recent content in Django on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 16 Mar 2015 17:26:43 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Django学习笔记</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Mar 2015 17:26:43 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:26:43 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;初步接触记录1&#34;&gt;初步接触记录1：&lt;/h2&gt;
+&lt;h4 id=&#34;建立一个项目&#34;&gt;建立一个项目：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在需要储存代码的目录内运行以下命令：&lt;code&gt;django-admin.py startproject your_porject_name&lt;/code&gt;，会生成以下目录结构：&lt;/li&gt;
+&lt;/ul&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+            
+              <category>Django</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>javascript on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/javascript/</link>
+    <description>Recent content in javascript on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 16 Dec 2016 17:04:42 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>【译】ES6的350个要点概述</title>
+        <link>https://jmwill.github.io/blog/2016/12/16/%E8%AF%91es6%E7%9A%84350%E4%B8%AA%E8%A6%81%E7%82%B9%E6%A6%82%E8%BF%B0/</link>
+        <pubDate>Fri, 16 Dec 2016 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Fri, 16 Dec 2016 17:04:42 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2016/12/16/%E8%AF%91es6%E7%9A%84350%E4%B8%AA%E8%A6%81%E7%82%B9%E6%A6%82%E8%BF%B0/</guid>
+        <description>前言： 我的深入ES6系列由24篇覆盖了未来ES6中大多数语法以及特性的改变的文章组成。这篇文章的目的是总结所有的要点，提供给你ES6中最切实</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>ES6</category>
+            
+          
+            
+              <category>JavaScript</category>
+            
+          
+            
+              <category>Front End</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript构造函数</title>
+        <link>https://jmwill.github.io/blog/2015/11/02/javascript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Mon, 02 Nov 2015 19:02:21 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 02 Nov 2015 19:02:21 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/11/02/javascript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</guid>
+        <description>什么是构造函数？构造函数在JavaScript中也就是一个普通的函数，之所以能成为构造函数是因为需要使用其来进行对象的构造。而构造新对象的情</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript面向对象编程</title>
+        <link>https://jmwill.github.io/blog/2015/11/02/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Mon, 02 Nov 2015 19:01:54 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 02 Nov 2015 19:01:54 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/11/02/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</guid>
+        <description>根据阮一峰大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript闭包</title>
+        <link>https://jmwill.github.io/blog/2015/10/29/javascript%E9%97%AD%E5%8C%85/</link>
+        <pubDate>Thu, 29 Oct 2015 15:02:18 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Thu, 29 Oct 2015 15:02:18 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/29/javascript%E9%97%AD%E5%8C%85/</guid>
+        <description>预备知识 this 在JavaScript中，this指向函数执行时的当前对象。this关键字在JavaScript中和执行环境，而非声明环境有关。而</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript原型链</title>
+        <link>https://jmwill.github.io/blog/2015/10/28/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+        <pubDate>Wed, 28 Oct 2015 14:25:17 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Wed, 28 Oct 2015 14:25:17 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/28/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+        <description>Ecmascript 6之前，JavaScript不包含传统的类，JavaScript中对象通过原型链进行继承，通过原型链就能够让函数成为对象的方法。 对象 在理解</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaScript作用域</title>
+        <link>https://jmwill.github.io/blog/2015/10/17/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+        <pubDate>Sat, 17 Oct 2015 18:48:39 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Sat, 17 Oct 2015 18:48:39 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/17/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+        <description>JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。 什么是作用域？ 字面意思来看，作用域就是某样事</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>《javascript语言精粹》记录</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9%E8%AE%B0%E5%BD%95/</link>
+        <pubDate>Mon, 16 Mar 2015 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:04:42 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9%E8%AE%B0%E5%BD%95/</guid>
+        <description>&lt;p&gt;javascript中存在着很多糟糕的特性：全局变量的轻易添加，无块级作用域，&lt;strong&gt;==&lt;/strong&gt; 判断的不精确性等等，&lt;br /&gt;
+但是它同时也具有许多精华的特性，对象字面量生成，函数字面量生成，使用原型继承的机制。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

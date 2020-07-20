@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>笔记 on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 17 Nov 2015 15:56:49 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>复习正则表达式</title>
+        <link>https://jmwill.github.io/blog/2015/11/17/%E5%A4%8D%E4%B9%A0%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+        <pubDate>Tue, 17 Nov 2015 15:56:49 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Tue, 17 Nov 2015 15:56:49 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/11/17/%E5%A4%8D%E4%B9%A0%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+        <description>因为一些开发需求需要用到正则表达式，但是实际开发中每用一次正则就重看一次这样的事情实在是羞愧至极，所以在这里再进行一次正则的复习。以求能够较</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript构造函数</title>
+        <link>https://jmwill.github.io/blog/2015/11/02/javascript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Mon, 02 Nov 2015 19:02:21 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 02 Nov 2015 19:02:21 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/11/02/javascript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</guid>
+        <description>什么是构造函数？构造函数在JavaScript中也就是一个普通的函数，之所以能成为构造函数是因为需要使用其来进行对象的构造。而构造新对象的情</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript面向对象编程</title>
+        <link>https://jmwill.github.io/blog/2015/11/02/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Mon, 02 Nov 2015 19:01:54 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 02 Nov 2015 19:01:54 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/11/02/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</guid>
+        <description>根据阮一峰大大所说JavaScript是一种基于对象的语言，但由于缺失了类这一个语法特性，JavaScript又不是一种面向对象编程的语言。</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript闭包</title>
+        <link>https://jmwill.github.io/blog/2015/10/29/javascript%E9%97%AD%E5%8C%85/</link>
+        <pubDate>Thu, 29 Oct 2015 15:02:18 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Thu, 29 Oct 2015 15:02:18 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/29/javascript%E9%97%AD%E5%8C%85/</guid>
+        <description>预备知识 this 在JavaScript中，this指向函数执行时的当前对象。this关键字在JavaScript中和执行环境，而非声明环境有关。而</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript原型链</title>
+        <link>https://jmwill.github.io/blog/2015/10/28/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+        <pubDate>Wed, 28 Oct 2015 14:25:17 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Wed, 28 Oct 2015 14:25:17 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/28/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+        <description>Ecmascript 6之前，JavaScript不包含传统的类，JavaScript中对象通过原型链进行继承，通过原型链就能够让函数成为对象的方法。 对象 在理解</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaScript作用域</title>
+        <link>https://jmwill.github.io/blog/2015/10/17/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+        <pubDate>Sat, 17 Oct 2015 18:48:39 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Sat, 17 Oct 2015 18:48:39 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/17/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+        <description>JavaScript（以下简称js）中作用域有全局作用域与局部作用域两种，这里重点讲局部作用域。 什么是作用域？ 字面意思来看，作用域就是某样事</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+            
+              <category>笔记</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>HTTP协议学习</title>
+        <link>https://jmwill.github.io/blog/2015/10/16/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Fri, 16 Oct 2015 21:11:44 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Fri, 16 Oct 2015 21:11:44 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/16/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;h2 id=&#34;http协议&#34;&gt;HTTP协议&lt;/h2&gt;
+&lt;p&gt;HTTP协议属于应用层的协议，由于简捷、快速等原因适用于web，对于HTTP协议来说，它需要建立在能提供可靠交付的底层协议上，而TCP/IP协议正好满足，于是，HTTP协议基本都是建立在TCP/IP上。同时，HTTP协议属于无状态协议，无状态表明，协议对于事务处理没有记忆能力，一次链接就是一次链接，与上一次以及下一次链接没有关系。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>web</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Django学习笔记</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Mar 2015 17:26:43 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:26:43 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;初步接触记录1&#34;&gt;初步接触记录1：&lt;/h2&gt;
+&lt;h4 id=&#34;建立一个项目&#34;&gt;建立一个项目：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在需要储存代码的目录内运行以下命令：&lt;code&gt;django-admin.py startproject your_porject_name&lt;/code&gt;，会生成以下目录结构：&lt;/li&gt;
+&lt;/ul&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+            
+              <category>Django</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Python学习笔记</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Mar 2015 17:16:27 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:16:27 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;入门所学知识&#34;&gt;入门所学知识：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;python中print的方法跟c语言的基本一样，同样可以使用&lt;code&gt;print &#39;output %s, something %s.&#39; %(temp1, temp2)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;raw字符串与多行字符串：&lt;code&gt;r&#39;...&#39;&lt;/code&gt;免于对字符串&lt;strong&gt;使用转义符&lt;/strong&gt;，但是无法表示多行字符，以及包含**’**和**“**的字符串， 可以使用r&amp;rsquo;&#39;&amp;rsquo;&amp;hellip;&amp;lsquo;&amp;lsquo;&amp;lsquo;来表示多行字符串&lt;/li&gt;
+&lt;li&gt;unicode字符串：在字符串前加&lt;strong&gt;u&lt;/strong&gt;字符，当出现中文编码错误的时候可以在文件第一行添加注释 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;python中的与运算，或运算，非运算使用的分别时&lt;strong&gt;and&lt;/strong&gt;， &lt;strong&gt;or&lt;/strong&gt;， &lt;strong&gt;not&lt;/strong&gt;关键字来实现&lt;/li&gt;
+&lt;/ol&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>《javascript语言精粹》记录</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9%E8%AE%B0%E5%BD%95/</link>
+        <pubDate>Mon, 16 Mar 2015 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:04:42 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9%E8%AE%B0%E5%BD%95/</guid>
+        <description>&lt;p&gt;javascript中存在着很多糟糕的特性：全局变量的轻易添加，无块级作用域，&lt;strong&gt;==&lt;/strong&gt; 判断的不精确性等等，&lt;br /&gt;
+但是它同时也具有许多精华的特性，对象字面量生成，函数字面量生成，使用原型继承的机制。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>git建立本地仓库</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/git%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</link>
+        <pubDate>Mon, 16 Mar 2015 16:21:35 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 16:21:35 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/git%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</guid>
+        <description>&lt;p&gt;近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Git</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

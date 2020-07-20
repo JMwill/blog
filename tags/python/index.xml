@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Python on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/python/</link>
+    <description>Recent content in Python on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 16 Mar 2015 17:26:43 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Django学习笔记</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Mar 2015 17:26:43 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:26:43 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;初步接触记录1&#34;&gt;初步接触记录1：&lt;/h2&gt;
+&lt;h4 id=&#34;建立一个项目&#34;&gt;建立一个项目：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在需要储存代码的目录内运行以下命令：&lt;code&gt;django-admin.py startproject your_porject_name&lt;/code&gt;，会生成以下目录结构：&lt;/li&gt;
+&lt;/ul&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+            
+              <category>Django</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Python学习笔记</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Mar 2015 17:16:27 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 17:16:27 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;入门所学知识&#34;&gt;入门所学知识：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;python中print的方法跟c语言的基本一样，同样可以使用&lt;code&gt;print &#39;output %s, something %s.&#39; %(temp1, temp2)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;raw字符串与多行字符串：&lt;code&gt;r&#39;...&#39;&lt;/code&gt;免于对字符串&lt;strong&gt;使用转义符&lt;/strong&gt;，但是无法表示多行字符，以及包含**’**和**“**的字符串， 可以使用r&amp;rsquo;&#39;&amp;rsquo;&amp;hellip;&amp;lsquo;&amp;lsquo;&amp;lsquo;来表示多行字符串&lt;/li&gt;
+&lt;li&gt;unicode字符串：在字符串前加&lt;strong&gt;u&lt;/strong&gt;字符，当出现中文编码错误的时候可以在文件第一行添加注释 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;python中的与运算，或运算，非运算使用的分别时&lt;strong&gt;and&lt;/strong&gt;， &lt;strong&gt;or&lt;/strong&gt;， &lt;strong&gt;not&lt;/strong&gt;关键字来实现&lt;/li&gt;
+&lt;/ol&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

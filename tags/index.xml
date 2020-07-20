@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Tags on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 11 Jun 2017 16:57:56 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Design Programs</title>
+        <link>https://jmwill.github.io/blog/tags/design-programs/</link>
+        <pubDate>Sun, 11 Jun 2017 16:57:56 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/design-programs/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>译文</title>
+        <link>https://jmwill.github.io/blog/tags/%E8%AF%91%E6%96%87/</link>
+        <pubDate>Sun, 11 Jun 2017 16:57:56 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/%E8%AF%91%E6%96%87/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>ES6</title>
+        <link>https://jmwill.github.io/blog/tags/es6/</link>
+        <pubDate>Fri, 16 Dec 2016 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/es6/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Front End</title>
+        <link>https://jmwill.github.io/blog/tags/front-end/</link>
+        <pubDate>Fri, 16 Dec 2016 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/front-end/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>javascript</title>
+        <link>https://jmwill.github.io/blog/tags/javascript/</link>
+        <pubDate>Fri, 16 Dec 2016 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/javascript/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>翻译</title>
+        <link>https://jmwill.github.io/blog/tags/%E7%BF%BB%E8%AF%91/</link>
+        <pubDate>Wed, 29 Jun 2016 11:07:03 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/%E7%BF%BB%E8%AF%91/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>笔记</title>
+        <link>https://jmwill.github.io/blog/tags/%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Tue, 17 Nov 2015 15:56:49 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/%E7%AC%94%E8%AE%B0/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>web</title>
+        <link>https://jmwill.github.io/blog/tags/web/</link>
+        <pubDate>Fri, 16 Oct 2015 21:11:44 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/web/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Hexo</title>
+        <link>https://jmwill.github.io/blog/tags/hexo/</link>
+        <pubDate>Tue, 17 Mar 2015 20:39:32 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/hexo/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Ubuntu</title>
+        <link>https://jmwill.github.io/blog/tags/ubuntu/</link>
+        <pubDate>Tue, 17 Mar 2015 20:39:32 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/ubuntu/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Django</title>
+        <link>https://jmwill.github.io/blog/tags/django/</link>
+        <pubDate>Mon, 16 Mar 2015 17:26:43 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/django/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Python</title>
+        <link>https://jmwill.github.io/blog/tags/python/</link>
+        <pubDate>Mon, 16 Mar 2015 17:26:43 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/python/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Git</title>
+        <link>https://jmwill.github.io/blog/tags/git/</link>
+        <pubDate>Mon, 16 Mar 2015 16:21:35 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        
+        <guid>https://jmwill.github.io/blog/tags/git/</guid>
+        <description></description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

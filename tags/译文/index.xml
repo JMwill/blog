@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>译文 on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/%E8%AF%91%E6%96%87/</link>
+    <description>Recent content in 译文 on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 11 Jun 2017 16:57:56 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/%E8%AF%91%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>程序构成-第四章</title>
+        <link>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E5%9B%9B%E7%AB%A0/</link>
+        <pubDate>Sun, 11 Jun 2017 16:57:56 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Sun, 11 Jun 2017 16:57:56 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E5%9B%9B%E7%AB%A0/</guid>
+        <description>&lt;h2 id=&#34;第四章-数据处理&#34;&gt;第四章: 数据处理&lt;/h2&gt;
+&lt;h3 id=&#34;41-介绍&#34;&gt;4.1 介绍&lt;/h3&gt;
+&lt;p&gt;现代计算机可以处理大量表示世界许多方面的数据. 从这些大数据集合, 我们可以以前所未有的方式学习到人类的相关行为: 语言是如何使用的, 拍摄什么照片, 讨论什么话题, 以及人们是如何跟他们周围的环境来接触的. 为了高效地处理大数据集合, 程序被组织成对有序的数据流进行操作的管道. 在本章, 我们会考虑一套的技术来处理并操纵有序数据流.&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>Design Programs</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>程序构成-第三章</title>
+        <link>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%B8%89%E7%AB%A0/</link>
+        <pubDate>Sun, 11 Jun 2017 16:57:45 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Sun, 11 Jun 2017 16:57:45 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%B8%89%E7%AB%A0/</guid>
+        <description>&lt;h2 id=&#34;第三章-解析计算机程序&#34;&gt;第三章: 解析计算机程序&lt;/h2&gt;
+&lt;h3 id=&#34;31-介绍&#34;&gt;3.1 介绍&lt;/h3&gt;
+&lt;p&gt;章节1以及2描述了两个程序的基本要素之间的紧密联系: 函数以及数据. 我们已经见识过函数是如何在高阶函数中被当做数据来操作. 我们也见识过数据是如何通过消息传递以及一个对象系统而被赋予行为的. 我们也学习了用来组织大型程序的技术, 例如函数抽象, 数据抽象, 类继承, 以及一般函数. 这些关键概念构成了建立模块化, 可维护, 可扩展的程序的坚实基础.&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>Design Programs</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>程序构成-第二章</title>
+        <link>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0/</link>
+        <pubDate>Sun, 11 Jun 2017 16:57:25 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Sun, 11 Jun 2017 16:57:25 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2017/06/11/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%BA%8C%E7%AB%A0/</guid>
+        <description>&lt;h2 id=&#34;第二章-构筑抽象数据&#34;&gt;第二章: 构筑抽象数据&lt;/h2&gt;
+&lt;h3 id=&#34;21-介绍&#34;&gt;2.1 介绍&lt;/h3&gt;
+&lt;p&gt;在第一章我们集中关注计算过程, 以及函数对程序设计的作用与影响. 我们已经见识过如何使用原始数据(numbers)以及原始操作符(算术), 如何通过组合和控制来组成复合函数, 以及通过给计算过程赋予名称来创建函数抽抽象. 我们也看到高阶函数通过允许我们自行控制, 从而推理出一般计算方法来增强我们的语言的力量. 这就是编程的本质.&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>Design Programs</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>程序构成-第一章</title>
+        <link>https://jmwill.github.io/blog/2017/03/09/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%B8%80%E7%AB%A0/</link>
+        <pubDate>Thu, 09 Mar 2017 09:18:16 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Thu, 09 Mar 2017 09:18:16 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2017/03/09/%E7%A8%8B%E5%BA%8F%E6%9E%84%E6%88%90-%E7%AC%AC%E4%B8%80%E7%AB%A0/</guid>
+        <description>&lt;h2 id=&#34;第一章用函数构筑抽象&#34;&gt;第一章：用函数构筑抽象&lt;/h2&gt;
+&lt;h3 id=&#34;11-开始&#34;&gt;1.1 开始&lt;/h3&gt;
+&lt;p&gt;计算机科学是极为广泛的科学。涉及的领域有全球的分布式系统，人工智能，机器人，图形学，安全，科学计算，计算机体系结构以及每年发掘的大量新兴的子领域对新技术的相关拓展。计算机科学的快速发展使得人类生活中的各个方面都收到影响。商业，通讯，科学，艺术，休闲，以及政治都在计算机领域被重新发明了。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>Design Programs</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>【译】ES6的350个要点概述</title>
+        <link>https://jmwill.github.io/blog/2016/12/16/%E8%AF%91es6%E7%9A%84350%E4%B8%AA%E8%A6%81%E7%82%B9%E6%A6%82%E8%BF%B0/</link>
+        <pubDate>Fri, 16 Dec 2016 17:04:42 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Fri, 16 Dec 2016 17:04:42 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2016/12/16/%E8%AF%91es6%E7%9A%84350%E4%B8%AA%E8%A6%81%E7%82%B9%E6%A6%82%E8%BF%B0/</guid>
+        <description>前言： 我的深入ES6系列由24篇覆盖了未来ES6中大多数语法以及特性的改变的文章组成。这篇文章的目的是总结所有的要点，提供给你ES6中最切实</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>译文</category>
+            
+          
+            
+              <category>ES6</category>
+            
+          
+            
+              <category>JavaScript</category>
+            
+          
+            
+              <category>Front End</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

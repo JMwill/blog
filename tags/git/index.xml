@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Git on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/git/</link>
+    <description>Recent content in Git on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 16 Mar 2015 16:21:35 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>git建立本地仓库</title>
+        <link>https://jmwill.github.io/blog/2015/03/16/git%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</link>
+        <pubDate>Mon, 16 Mar 2015 16:21:35 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Mon, 16 Mar 2015 16:21:35 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/16/git%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/</guid>
+        <description>&lt;p&gt;近来，因为现实原因，经常处于断网的状态（掩面T_T），所以就突发奇想在本地建立个仓库存储自己的代码，手贱的时候也可以有后悔药吃。不多说，上流程&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>Git</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

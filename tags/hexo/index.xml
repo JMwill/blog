@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Hexo on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/hexo/</link>
+    <description>Recent content in Hexo on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 17 Mar 2015 20:39:32 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>ubuntu下搭建Hexo博客</title>
+        <link>https://jmwill.github.io/blog/2015/03/17/ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Tue, 17 Mar 2015 20:39:32 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Tue, 17 Mar 2015 20:39:32 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/03/17/ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;h2 id=&#34;ubuntu上制作hexo博客&#34;&gt;ubuntu上制作Hexo博客&lt;/h2&gt;
+&lt;p&gt;现在这个国内氛围里，我们什么都要求最低成本，所以咯，我们现在就搭建个免费的博客来使用一下下吧！(￣▽￣)~*&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://hexo.io/&#34;&gt;hexo&lt;/a&gt;是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github上。其作者是来自台湾的**@tommy351**。我们搭建**hexo**这个东东，是拿做博客的嘛，那想要找个地方来放我们写下的文章，应该要放到哪里呢，答案当然是大热的github上啦。所以我们需要先装上git和node.js。因此，我们又可以趁机来学一下node.js了。不多说，开工。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>Ubuntu</category>
+            
+          
+            
+              <category>Hexo</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

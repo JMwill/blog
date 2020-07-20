@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>web on Will&#39;s Blog</title>
+    <link>https://jmwill.github.io/blog/tags/web/</link>
+    <description>Recent content in web on Will&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>willsurpriseyou@foxmail.com (Will)</managingEditor>
+    <webMaster>willsurpriseyou@foxmail.com (Will)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 16 Oct 2015 21:11:44 +0800</lastBuildDate>
+    
+        <atom:link href="https://jmwill.github.io/blog/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>HTTP协议学习</title>
+        <link>https://jmwill.github.io/blog/2015/10/16/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Fri, 16 Oct 2015 21:11:44 +0800</pubDate>
+        <author>willsurpriseyou@foxmail.com (Will)</author>
+        <atom:modified>Fri, 16 Oct 2015 21:11:44 +0800</atom:modified>
+        <guid>https://jmwill.github.io/blog/2015/10/16/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;h2 id=&#34;http协议&#34;&gt;HTTP协议&lt;/h2&gt;
+&lt;p&gt;HTTP协议属于应用层的协议，由于简捷、快速等原因适用于web，对于HTTP协议来说，它需要建立在能提供可靠交付的底层协议上，而TCP/IP协议正好满足，于是，HTTP协议基本都是建立在TCP/IP上。同时，HTTP协议属于无状态协议，无状态表明，协议对于事务处理没有记忆能力，一次链接就是一次链接，与上一次以及下一次链接没有关系。&lt;/p&gt;</description>
+        
+        <dc:creator>Will</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>笔记</category>
+            
+          
+            
+              <category>web</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
